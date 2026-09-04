@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROSPER Gestão Financeira • Software Executivo Vitalício para Windows</title>
+  <meta name="description" content="Software de Gestão Financeira Empresarial para Windows. DRE Gerencial, Conciliação OFX, Centros de Custo e Fluxo de Caixa. 100% Offline e Seguro. Licença Vitalícia sem Mensalidades por R$ 197.">
+  
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            dark: {
+              bg: '#070a11',
+              surface: '#0d1322',
+              card: '#111827',
+              border: '#1f293d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #070a11;
+      color: #f1f5f9;
+    }
+    .glow-radial {
+      background: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.12) 0%, rgba(7, 10, 17, 0) 70%);
+    }
+    .glow-btn {
+      box-shadow: 0 8px 25px -4px rgba(16, 185, 129, 0.45);
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(16, 185, 129, 0.35);
+    }
+    /* Grid background pattern */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-emerald-500 selection:text-white bg-[#070a11]">
+
+  <!-- TOP BAR -->
+  <div class="bg-gradient-to-r from-emerald-950 via-[#0a1b15] to-slate-950 text-emerald-300 text-xs font-semibold py-2.5 px-4 text-center border-b border-emerald-500/20 flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <span>Lançamento Oficial: Licença Vitalícia Sem Mensalidades • Pagamento Único de <strong>R$ 197,00</strong></span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="border-b border-slate-800/60 bg-[#070a11]/90 backdrop-blur-xl sticky top-0 z-50 transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-emerald-600/30">
+          P
+        </div>
+        <div>
+          <span class="font-black text-lg tracking-tight text-white block leading-none">PROSPER</span>
+          <span class="text-[10px] font-semibold text-emerald-400 tracking-wider uppercase block mt-1">Gestão Financeira</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-300">
+        <a href="#solucao" class="hover:text-emerald-400 transition-colors">Visão Geral</a>
+        <a href="#recursos" class="hover:text-emerald-400 transition-colors">Módulos & DRE</a>
+        <a href="#depoimentos" class="hover:text-emerald-400 transition-colors">Quem Usa</a>
+        <a href="#comparativo" class="hover:text-emerald-400 transition-colors">Comparativo</a>
+        <a href="#faq" class="hover:text-emerald-400 transition-colors">Dúvidas</a>
+      </nav>
+
+      <a href="#checkout" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs rounded-xl shadow-md shadow-emerald-600/20 transition-all flex items-center gap-2">
+        <i data-lucide="key" class="w-3.5 h-3.5"></i>
+        <span>Adquirir Licença</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (Spacious & High-End) -->
+  <section class="relative pt-20 pb-32 overflow-hidden bg-grid-pattern glow-radial">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-10 relative z-10">
+      
+      <!-- Trust Badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-bold tracking-wide shadow-sm">
+        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+        <span>SOFTWARE DESKTOP PROFISSIONAL • 100% INDEPENDENTE E SEGURO</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] max-w-4xl mx-auto">
+        A clareza financeira da sua empresa, <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500">sem pagar mensalidades.</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+        O <strong>PROSPER</strong> é o software para Windows com <strong class="text-slate-200 font-semibold">DRE Gerencial automático, Conciliação OFX, Centros de Custo e Fluxo de Caixa</strong>. Banco de dados SQLite local no seu próprio computador: seus dados nunca vazam na nuvem.
+      </p>
+
+      <!-- CTA Button & Badges -->
+      <div class="space-y-5 pt-2">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#checkout" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base rounded-2xl shadow-xl shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wide">
+            <i data-lucide="sparkles" class="w-5 h-5 stroke-[2.5]"></i>
+            <span>GARANTIR LICENÇA VITALÍCIA POR R$ 197,00</span>
+          </a>
+          <a href="#recursos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-5 rounded-2xl border border-slate-800 hover:border-slate-700 bg-slate-900/70 text-slate-300 font-bold text-sm hover:text-white transition-all">
+            <i data-lucide="eye" class="w-4 h-4"></i>
+            <span>Ver Demonstração dos Módulos</span>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs text-slate-400 font-medium pt-3">
+          <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Pagamento Único</span>
+          <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Banco SQLite Local Seguro</span>
+          <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Windows 10 e 11</span>
+          <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Garantia de 7 Dias</span>
+        </div>
+      </div>
+
+      <!-- MAIN APP INTERFACE SHOWCASE (Realistic Windows Cockpit) -->
+      <div class="pt-10 max-w-5xl mx-auto">
+        <div class="p-3 rounded-3xl bg-gradient-to-b from-slate-700/40 via-slate-800/20 to-slate-900/60 border border-slate-700/60 shadow-2xl">
+          <div class="rounded-2xl overflow-hidden bg-[#0d1321] border border-slate-800/80 shadow-inner">
+            
+            <!-- Window Titlebar -->
+            <div class="bg-[#101726] px-4 py-3 flex items-center justify-between border-b border-slate-800/80">
+              <div class="flex items-center gap-2.5">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                  <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                </div>
+                <span class="text-xs font-mono font-bold text-slate-300 ml-2">PROSPER Gestão Financeira • Cockpit Executivo</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                  ● BANCO LOCAL CONECTADO
+                </span>
+              </div>
+            </div>
+
+            <!-- Dashboard Content Preview -->
+            <div class="p-6 sm:p-8 space-y-6 text-left">
+              <!-- KPI Cards Row -->
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-5 rounded-2xl bg-[#131b2e] border border-slate-800">
+                  <span class="text-[11px] uppercase font-bold text-slate-400">Disponibilidade Imediata</span>
+                  <p class="text-xl sm:text-2xl font-mono font-extrabold text-white mt-1.5">R$ 168.420,00</p>
+                  <span class="text-[11px] text-emerald-400 font-semibold mt-1 block">↑ 18.4% vs mês anterior</span>
+                </div>
+                <div class="p-5 rounded-2xl bg-[#131b2e] border border-slate-800">
+                  <span class="text-[11px] uppercase font-bold text-slate-400">Receita Realizada</span>
+                  <p class="text-xl sm:text-2xl font-mono font-extrabold text-emerald-400 mt-1.5">R$ 94.800,00</p>
+                  <span class="text-[11px] text-slate-400 mt-1 block">142 lançamentos pagos</span>
+                </div>
+                <div class="p-5 rounded-2xl bg-[#131b2e] border border-slate-800">
+                  <span class="text-[11px] uppercase font-bold text-slate-400">Despesas Totais</span>
+                  <p class="text-xl sm:text-2xl font-mono font-extrabold text-rose-400 mt-1.5">R$ 41.250,00</p>
+                  <span class="text-[11px] text-slate-400 mt-1 block">100% orçado e categorizado</span>
+                </div>
+                <div class="p-5 rounded-2xl bg-[#131b2e] border border-slate-800">
+                  <span class="text-[11px] uppercase font-bold text-slate-400">Lucro Líquido Real</span>
+                  <p class="text-xl sm:text-2xl font-mono font-extrabold text-blue-400 mt-1.5">R$ 53.550,00</p>
+                  <span class="text-[11px] text-emerald-400 font-bold mt-1 block">Margem Líquida: 56.4%</span>
+                </div>
+              </div>
+
+              <!-- Visual Chart Simulation & Recent Stream -->
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                <!-- Bar Chart Preview -->
+                <div class="lg:col-span-2 p-6 rounded-2xl bg-[#131b2e] border border-slate-800 space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h4 class="text-xs font-bold text-white uppercase tracking-wider">Evolução de Caixa • Entradas vs Saídas</h4>
+                      <p class="text-[11px] text-slate-400">Histórico consolidado dos últimos 6 meses</p>
+                    </div>
+                    <span class="text-xs font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-1 rounded">Regime de Competência</span>
+                  </div>
+
+                  <!-- Simulated Bar Columns -->
+                  <div class="h-44 flex items-end justify-between gap-3 pt-4 px-2 border-b border-slate-800">
+                    <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+                      <div class="w-full flex items-end justify-center gap-1 h-full">
+                        <div class="w-1/2 bg-emerald-500 rounded-t h-[65%]"></div>
+                        <div class="w-1/2 bg-rose-500 rounded-t h-[35%]"></div>
+                      </div>
+                      <span class="text-[10px] font-mono text-slate-400">Abr</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+                      <div class="w-full flex items-end justify-center gap-1 h-full">
+                        <div class="w-1/2 bg-emerald-500 rounded-t h-[75%]"></div>
+                        <div class="w-1/2 bg-rose-500 rounded-t h-[40%]"></div>
+                      </div>
+                      <span class="text-[10px] font-mono text-slate-400">Mai</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+                      <div class="w-full flex items-end justify-center gap-1 h-full">
+                        <div class="w-1/2 bg-emerald-500 rounded-t h-[70%]"></div>
+                        <div class="w-1/2 bg-rose-500 rounded-t h-[30%]"></div>
+                      </div>
+                      <span class="text-[10px] font-mono text-slate-400">Jun</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+                      <div class="w-full flex items-end justify-center gap-1 h-full">
+                        <div class="w-1/2 bg-emerald-500 rounded-t h-[85%]"></div>
+                        <div class="w-1/2 bg-rose-500 rounded-t h-[45%]"></div>
+                      </div>
+                      <span class="text-[10px] font-mono text-slate-400">Jul</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+                      <div class="w-full flex items-end justify-center gap-1 h-full">
+                        <div class="w-1/2 bg-emerald-500 rounded-t h-[90%]"></div>
+                        <div class="w-1/2 bg-rose-500 rounded-t h-[38%]"></div>
+                      </div>
+                      <span class="text-[10px] font-mono text-slate-400">Ago</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+                      <div class="w-full flex items-end justify-center gap-1 h-full">
+                        <div class="w-1/2 bg-emerald-400 rounded-t h-[95%] shadow-lg shadow-emerald-500/30"></div>
+                        <div class="w-1/2 bg-rose-400 rounded-t h-[42%]"></div>
+                      </div>
+                      <span class="text-[10px] font-mono text-emerald-300 font-bold">Set (Atual)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Live Stream Feed -->
+                <div class="p-6 rounded-2xl bg-[#131b2e] border border-slate-800 space-y-3.5">
+                  <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Últimos Lançamentos</h4>
+                    <span class="text-[10px] text-slate-400 font-mono">Tempo Real</span>
+                  </div>
+                  <div class="space-y-2.5 text-xs">
+                    <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
+                      <div>
+                        <p class="font-bold text-slate-200">Prestação de Serviços B2B</p>
+                        <span class="text-[10px] text-slate-500">Itaú Conta Corrente • Nubank</span>
+                      </div>
+                      <span class="font-mono font-bold text-emerald-400">+ R$ 6.800,00</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
+                      <div>
+                        <p class="font-bold text-slate-200">Servidores & Infraestrutura</p>
+                        <span class="text-[10px] text-slate-500">Cartão Corporativo • TI</span>
+                      </div>
+                      <span class="font-mono font-bold text-rose-400">- R$ 740,00</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
+                      <div>
+                        <p class="font-bold text-slate-200">Consultoria Contábil</p>
+                        <span class="text-[10px] text-slate-500">Bradesco PJ • Administrativo</span>
+                      </div>
+                      <span class="font-mono font-bold text-rose-400">- R$ 1.200,00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PAIN POINT SECTION (Espaçosa e Intencional) -->
+  <section id="solucao" class="py-28 border-t border-b border-slate-800/60 bg-[#090d16]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-16">
+      
+      <div class="text-center space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+          A Realidade Que Ninguém Te Conta
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight max-w-3xl mx-auto">
+          Você abriu seu negócio para ter lucro, não para ser refém de mensalidades ou perder noites com planilhas.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Card 1 -->
+        <div class="p-8 rounded-3xl bg-[#0e1424] border border-slate-800/90 card-hover space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center">
+            <i data-lucide="receipt" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white leading-snug">
+            Sistemas SaaS: O "aluguel financeiro" sem fim
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Plataformas em nuvem parecem baratas no primeiro mês, mas custam de <strong>R$ 1.000 a R$ 3.000 por ano</strong>. Se você atrasar ou decidir cancelar, seu acesso é bloqueado e todo o histórico da sua empresa fica trancado. Além disso, seus dados confidenciais ficam guardados em servidores de terceiros.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-8 rounded-3xl bg-[#0e1424] border border-slate-800/90 card-hover space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+            <i data-lucide="sheet" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white leading-snug">
+            Planilhas do Excel: Falsas economias que custam caro
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Começam simples, mas logo ficam lentas, pesadas e cheias de fórmulas corrompidas. Sem conciliação bancária automática, você passa horas digitando lançamentos repetitivos e nunca tem certeza se o número no final da planilha é o dinheiro real que sobrou na conta.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE MODULES SHOWCASE (High Detail with Previews) -->
+  <section id="recursos" class="py-32 space-y-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-28">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+          Arquitetura Executiva Completa
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          Feito para quem decide os rumos da empresa
+        </h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto">
+          Conheça em detalhes as principais ferramentas que o PROSPER coloca no seu computador.
+        </p>
+      </div>
+
+      <!-- Module 1: DRE Gerencial -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-2xl font-black text-white tracking-tight">
+            1. DRE Gerencial Oficial com Análise Vertical
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Faturamento não é lucro. O DRE do PROSPER calcula automaticamente a sua <strong>Margem Bruta, LAJIDA (EBITDA) e Lucro Líquido Real</strong> em segundos.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Alternância com 1 clique: Regime de Competência vs Caixa</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Análise Vertical (%) de cada linha sobre a Receita Líquida</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Exportação em PDF e A4 timbrado com assinaturas</li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="p-6 rounded-3xl bg-[#0e1424] border border-slate-800 shadow-xl space-y-3 font-mono text-xs">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-400 font-sans font-bold">
+              <span>ESTRUTURA DRE GERENCIAL</span>
+              <span class="text-emerald-400 font-mono">Setembro / 2026</span>
+            </div>
+            
+            <div class="space-y-1.5 text-[11px]">
+              <div class="flex justify-between py-1 px-2.5 rounded bg-slate-900/80 font-bold text-white">
+                <span>(+) RECEITA BRUTA DE VENDAS</span>
+                <span class="text-emerald-400">R$ 112.500,00</span>
+              </div>
+              <div class="flex justify-between py-1 px-2.5 text-slate-400">
+                <span>(-) Deduções & Impostos sobre Venda (Simples)</span>
+                <span class="text-rose-400">- R$ 6.750,00</span>
+              </div>
+              <div class="flex justify-between py-1 px-2.5 rounded bg-slate-900 font-extrabold text-white">
+                <span>(=) RECEITA OPERACIONAL LÍQUIDA</span>
+                <span>R$ 105.750,00</span>
+              </div>
+              <div class="flex justify-between py-1 px-2.5 text-slate-400">
+                <span>(-) Custos dos Produtos e Serviços (CPV/CSP)</span>
+                <span class="text-rose-400">- R$ 28.400,00</span>
+              </div>
+              <div class="flex justify-between py-1 px-2.5 rounded bg-emerald-950/30 text-emerald-300 font-bold border border-emerald-500/20">
+                <span>(=) LUCRO BRUTO OPERACIONAL (Margem 73%)</span>
+                <span>R$ 77.350,00</span>
+              </div>
+              <div class="flex justify-between py-1 px-2.5 text-slate-400">
+                <span>(-) Despesas Administrativas, Comerciais e Fixas</span>
+                <span class="text-rose-400">- R$ 22.100,00</span>
+              </div>
+              <div class="flex justify-between py-1.5 px-3 rounded-xl bg-emerald-500 text-slate-950 font-black text-xs shadow-md">
+                <span>(=) RESULTADO LÍQUIDO DO EXERCÍCIO</span>
+                <span>R$ 55.250,00 (52.2%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 2: Conciliação OFX -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="p-6 rounded-3xl bg-[#0e1424] border border-slate-800 shadow-xl space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs">
+              <span class="font-bold text-white flex items-center gap-2">
+                <i data-lucide="upload" class="w-4 h-4 text-blue-400"></i>
+                Importador de Extrato Bancário (.OFX)
+              </span>
+              <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono text-[10px] font-bold">
+                100% AUTOMÁTICO
+              </span>
+            </div>
+
+            <!-- Simulated OFX Stream Rows -->
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <p class="font-bold text-white">PIX RECEBIDO • CLIENTE ALFA LTDA</p>
+                    <span class="text-[10px] text-slate-400 font-mono">14/09/2026 • Nubank PJ • Conciliado</span>
+                  </div>
+                </div>
+                <span class="font-mono font-bold text-emerald-400">+ R$ 4.500,00</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <p class="font-bold text-white">PGTO TRIB FEDERAIS • DARF SIMPLES</p>
+                    <span class="text-[10px] text-slate-400 font-mono">15/09/2026 • Itaú • Conciliado</span>
+                  </div>
+                </div>
+                <span class="font-mono font-bold text-rose-400">- R$ 1.840,50</span>
+              </div>
+            </div>
+            
+            <p class="text-[11px] text-slate-400 pt-1 text-center">
+              💡 Suporta extratos `.OFX` de <strong>Nubank, Itaú, Bradesco, Inter, Santander, BB, C6</strong> e cooperativas.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+            <i data-lucide="landmark" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-2xl font-black text-white tracking-tight">
+            2. Conciliação Bancária OFX em 1 Clique
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Nunca mais digite lançamentos manualmente. Baixe o extrato OFX no internet banking da sua empresa, arraste para o PROSPER e deixe o sistema cruzar e conciliar as movimentações com seu plano de contas.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400"></i> Fim de erros de digitação e centavos esquecidos</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400"></i> Vinculação automática com clientes e fornecedores</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400"></i> Saldo real do banco conferido com 100% de exatidão</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Module 3: Centros de Custo -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+            <i data-lucide="pie-chart" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-2xl font-black text-white tracking-tight">
+            3. Centros de Custo & Rentabilidade
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Sua empresa tem filiais, projetos ou setores diferentes? O PROSPER segmenta cada entrada e saída para você saber exatamente <strong>onde está o ralo financeiro e quais projetos dão mais lucro</strong>.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> Separação por Departamentos (Marketing, Operações, Vendas, TI)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> Relatório individual de margem por centro de custo</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> Tomada de decisão baseada em números reais</li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="p-6 rounded-3xl bg-[#0e1424] border border-slate-800 shadow-xl space-y-3 text-xs">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+              <span class="font-bold text-white uppercase tracking-wider">RESULTADO POR CENTRO DE CUSTO</span>
+              <span class="font-mono text-purple-400 font-bold">Consolidado</span>
+            </div>
+
+            <div class="space-y-2">
+              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80 flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Operações & Serviços (Core)</span>
+                  <span class="text-[10px] text-slate-400">72% da receita bruta</span>
+                </div>
+                <div class="text-right font-mono">
+                  <span class="text-emerald-400 font-bold block">+ R$ 64.200,00</span>
+                  <span class="text-[10px] text-slate-400">Margem: 68%</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80 flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Comercial & Vendas</span>
+                  <span class="text-[10px] text-slate-400">Comissões, captação e viagens</span>
+                </div>
+                <div class="text-right font-mono">
+                  <span class="text-emerald-400 font-bold block">+ R$ 18.500,00</span>
+                  <span class="text-[10px] text-slate-400">Margem: 42%</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80 flex items-center justify-between">
+                <div>
+                  <span class="font-bold text-white block">Administrativo & Diretoria</span>
+                  <span class="text-[10px] text-slate-400">Custos fixos de estrutura</span>
+                </div>
+                <div class="text-right font-mono">
+                  <span class="text-rose-400 font-bold block">- R$ 12.400,00</span>
+                  <span class="text-[10px] text-slate-400">Centro de despesa pura</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / SOCIAL PROOF (Realista & Confiável) -->
+  <section id="depoimentos" class="py-28 border-t border-b border-slate-800/60 bg-[#090d16]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-16">
+      
+      <div class="text-center space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+          Resultados Reais
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+          O que dizem os empresários que usam o PROSPER
+        </h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto">
+          Veja a transformação financeira de empresas que abandonaram o aluguel de sistemas e as planilhas manuais.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="p-7 rounded-3xl bg-[#0e1424] border border-slate-800/90 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex text-amber-400 text-xs">★★★★★</div>
+            <p class="text-xs text-slate-300 leading-relaxed italic">
+              "Eu pagava R$ 189 todo mês em um sistema famoso na nuvem e o sistema vivia fora do ar na hora de fechar o caixa. Comprei o PROSPER por R$ 197 uma única vez e o DRE dele é muito mais claro e objetivo. Já economizei mais de R$ 2.000."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white font-bold flex items-center justify-center text-sm">
+              CE
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Carlos Eduardo Ramos</p>
+              <p class="text-[10px] text-slate-400">Diretor • Alfa Distribuidora</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="p-7 rounded-3xl bg-[#0e1424] border border-slate-800/90 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex text-amber-400 text-xs">★★★★★</div>
+            <p class="text-xs text-slate-300 leading-relaxed italic">
+              "A conciliação OFX é surreal de rápida. Eu importo o extrato do Nubank e do Itaú e em dois minutos todo o mês tá conciliado. E o melhor: sem ninguém de fora fuçando os dados bancários da minha empresa."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white font-bold flex items-center justify-center text-sm">
+              MS
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Mariana Siqueira</p>
+              <p class="text-[10px] text-slate-400">Sócia • Siqueira Consultoria B2B</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="p-7 rounded-3xl bg-[#0e1424] border border-slate-800/90 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex text-amber-400 text-xs">★★★★★</div>
+            <p class="text-xs text-slate-300 leading-relaxed italic">
+              "As planilhas do Excel sempre travavam e viviam quebrando fórmulas. O PROSPER resolveu tudo em um programa limpo e leve. A divisão por Centro de Custo nos mostrou que um dos nossos serviços dava prejuízo."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 text-white font-bold flex items-center justify-center text-sm">
+              FD
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Felipe Duarte</p>
+              <p class="text-[10px] text-slate-400">Fundador • Nexus Agência Digital</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE (Clean & High Contrast) -->
+  <section id="comparativo" class="py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
+      
+      <div class="text-center space-y-3">
+        <h2 class="text-xs font-extrabold uppercase tracking-widest text-emerald-400">Comparação Objetiva</h2>
+        <h3 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+          Faça a conta: Quanto custa a sua escolha?
+        </h3>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-slate-800 bg-[#0d1322] shadow-2xl">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 bg-[#101726] text-slate-400 uppercase tracking-wider font-bold">
+              <th class="p-5">Critério</th>
+              <th class="p-5 text-emerald-400 bg-emerald-950/20 border-l border-r border-emerald-500/30 font-black text-sm">PROSPER Desktop</th>
+              <th class="p-5">Sistemas SaaS (Nuvem)</th>
+              <th class="p-5">Planilhas Excel</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/80 text-slate-300">
+            <tr>
+              <td class="p-5 font-bold text-white">Custo de Aquisição</td>
+              <td class="p-5 bg-emerald-950/20 border-l border-r border-emerald-500/30 font-extrabold text-emerald-300">R$ 197,00 (Único)</td>
+              <td class="p-5 text-rose-400">R$ 90 a R$ 250 / mês</td>
+              <td class="p-5">R$ 0,00</td>
+            </tr>
+            <tr>
+              <td class="p-5 font-bold text-white">Custo em 2 Anos</td>
+              <td class="p-5 bg-emerald-950/20 border-l border-r border-emerald-500/30 font-extrabold text-emerald-300">R$ 197,00 Total</td>
+              <td class="p-5 text-rose-400 font-bold">R$ 2.160 a R$ 6.000</td>
+              <td class="p-5">R$ 0,00</td>
+            </tr>
+            <tr>
+              <td class="p-5 font-bold text-white">Privacidade & Segurança</td>
+              <td class="p-5 bg-emerald-950/20 border-l border-r border-emerald-500/30 font-bold text-emerald-300">100% no seu PC (SQLite)</td>
+              <td class="p-5">Nuvem compartilhada</td>
+              <td class="p-5">Arquivo sem trava</td>
+            </tr>
+            <tr>
+              <td class="p-5 font-bold text-white">DRE Gerencial Completo</td>
+              <td class="p-5 bg-emerald-950/20 border-l border-r border-emerald-500/30 font-bold text-emerald-300">✓ Incluso</td>
+              <td class="p-5">Apenas planos caros</td>
+              <td class="p-5 text-rose-400">✗ Manual e instável</td>
+            </tr>
+            <tr>
+              <td class="p-5 font-bold text-white">Conciliação Bancária OFX</td>
+              <td class="p-5 bg-emerald-950/20 border-l border-r border-emerald-500/30 font-bold text-emerald-300">✓ Em 1 clique</td>
+              <td class="p-5">✓ Incluso</td>
+              <td class="p-5 text-rose-400">✗ Inexistente</td>
+            </tr>
+            <tr>
+              <td class="p-5 font-bold text-white">Funciona Sem Internet</td>
+              <td class="p-5 bg-emerald-950/20 border-l border-r border-emerald-500/30 font-bold text-emerald-300">✓ 100% Offline</td>
+              <td class="p-5 text-rose-400">✗ Não abre</td>
+              <td class="p-5">✓ Sim</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING & CHECKOUT SECTION (Spacious and Authoritative) -->
+  <section id="checkout" class="py-28 relative">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <div class="relative p-8 sm:p-14 rounded-3xl bg-gradient-to-b from-[#0f1729] to-[#070b13] border-2 border-emerald-500/60 shadow-2xl glow-btn space-y-9 text-center">
+        
+        <!-- Offer Tag -->
+        <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-500 text-slate-950 text-xs font-black uppercase tracking-wider shadow-lg">
+          LICENÇA VITALÍCIA • PAGAMENTO ÚNICO
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            PROSPER Gestão Financeira
+          </h3>
+          <p class="text-sm text-slate-400 max-w-md mx-auto">
+            Acesso definitivo para seu computador. Instale hoje e pare de pagar mensalidades para sempre.
+          </p>
+        </div>
+
+        <!-- Pricing Tag -->
+        <div class="py-6 border-y border-slate-800/80 space-y-2">
+          <span class="text-xs text-slate-500 line-through font-bold block">Preço normal de lançamento: R$ 497,00</span>
+          <div class="flex items-baseline justify-center gap-2">
+            <span class="text-xl font-bold text-slate-400">R$</span>
+            <span class="text-6xl sm:text-7xl font-black text-emerald-400 tracking-tight">197,00</span>
+            <span class="text-xs text-slate-400 font-semibold uppercase">à vista</span>
+          </div>
+          <p class="text-xs text-slate-400 font-medium pt-1">
+            ou em até <strong>12x no cartão de crédito</strong>
+          </p>
+        </div>
+
+        <!-- Deliverables Checklist -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left text-xs text-slate-300">
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>Licença Vitalícia para Windows (10 e 11)</span></div>
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>Chave Serial exclusiva enviada na hora</span></div>
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>DRE Gerencial Oficial (Caixa e Competência)</span></div>
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>Conciliação Bancária OFX Instantânea</span></div>
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>Centros de Custo & Rentabilidade</span></div>
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>Sem limites de contas, cadastros ou lançamentos</span></div>
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>100% Offline com banco SQLite Local</span></div>
+          <div class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i> <span>Garantia Total de 7 Dias</span></div>
+        </div>
+
+        <!-- Checkout Action Button -->
+        <div class="space-y-4 pt-4">
+          <!-- COLOQUE SEU LINK DE CHECKOUT DA KIWIFY OU HOTMART ABAIXO -->
+          <a href="https://pay.kiwify.com.br/SEU_LINK_AQUI" target="_blank" class="group relative w-full py-5 sm:py-6 px-8 bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-300 hover:from-emerald-300 hover:to-teal-200 text-slate-950 font-black text-base sm:text-xl rounded-2xl shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3.5 tracking-wide uppercase">
+            <div class="p-1.5 rounded-xl bg-slate-950/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="lock" class="w-6 h-6 text-slate-950 stroke-[2.5]"></i>
+            </div>
+            <span>COMPRAR AGORA • LIBERAÇÃO IMEDIATA</span>
+            <i data-lucide="arrow-right" class="w-6 h-6 text-slate-950 stroke-[2.5] group-hover:translate-x-1.5 transition-transform"></i>
+          </a>
+
+          <p class="text-xs text-slate-400 flex items-center justify-center gap-2 pt-1 font-medium">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+            <span>Pagamento 100% Seguro por Pix ou Cartão • Chave Serial Enviada Automaticamente</span>
+          </p>
+        </div>
+
+        <!-- Guarantee Badge -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 flex items-center gap-4 text-left">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="badge-check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white">Garantia Incondicional de 7 Dias</h5>
+            <p class="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
+              Instale o PROSPER, importe seus extratos e veja o DRE da sua empresa. Se por qualquer motivo você não amar a experiência, basta pedir o reembolso e você recebe 100% do valor de volta.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ACCORDION FAQ -->
+  <section id="faq" class="py-24 border-t border-slate-800/60 bg-[#090d16]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 space-y-12">
+      
+      <div class="text-center space-y-3">
+        <h2 class="text-xs font-extrabold uppercase tracking-widest text-emerald-400">Dúvidas Frequentes</h2>
+        <h3 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+          Perguntas e Respostas
+        </h3>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        
+        <!-- Item 1 -->
+        <details class="group p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 open:border-emerald-500/40 transition-all cursor-pointer">
+          <summary class="font-bold text-white text-sm flex items-center justify-between list-none">
+            <span>É realmente um pagamento único? Não tem pegadinha?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-400 leading-relaxed pt-3 border-t border-slate-800/60 mt-3">
+            <strong>Exatamente, 100% único.</strong> Você paga apenas R$ 197,00 uma vez e o software é seu para sempre. Não cobramos mensalidades, nem taxas por volume de lançamentos ou emissão de relatórios.
+          </p>
+        </details>
+
+        <!-- Item 2 -->
+        <details class="group p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 open:border-emerald-500/40 transition-all cursor-pointer">
+          <summary class="font-bold text-white text-sm flex items-center justify-between list-none">
+            <span>Como eu recebo o instalador e a chave de ativação?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-400 leading-relaxed pt-3 border-t border-slate-800/60 mt-3">
+            Assim que seu pagamento for aprovado (no Pix cai na hora, no cartão leva segundos), a plataforma (Kiwify ou Hotmart) envia automaticamente para o seu e-mail o link para baixar o instalador e a sua <strong>Chave Serial de Ativação</strong>. Basta abrir o sistema, colar a chave e usar!
+          </p>
+        </details>
+
+        <!-- Item 3 -->
+        <details class="group p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 open:border-emerald-500/40 transition-all cursor-pointer">
+          <summary class="font-bold text-white text-sm flex items-center justify-between list-none">
+            <span>Funciona sem internet?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-400 leading-relaxed pt-3 border-t border-slate-800/60 mt-3">
+            <strong>Sim!</strong> O PROSPER roda 100% localmente no seu computador através de um banco de dados SQLite nativo. Você pode utilizá-lo em viagens, fazendas, locais sem sinal ou quando sua internet cair, com velocidade instantânea.
+          </p>
+        </details>
+
+        <!-- Item 4 -->
+        <details class="group p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 open:border-emerald-500/40 transition-all cursor-pointer">
+          <summary class="font-bold text-white text-sm flex items-center justify-between list-none">
+            <span>Quais são os requisitos mínimos do computador?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-400 leading-relaxed pt-3 border-t border-slate-800/60 mt-3">
+            Qualquer computador ou notebook com <strong>Windows 10 ou Windows 11</strong> (64 bits). O programa é extremamente leve e abre em segundos.
+          </p>
+        </details>
+
+        <!-- Item 5 -->
+        <details class="group p-5 rounded-2xl bg-[#0d1322] border border-slate-800/80 open:border-emerald-500/40 transition-all cursor-pointer">
+          <summary class="font-bold text-white text-sm flex items-center justify-between list-none">
+            <span>E se eu formatar ou trocar de computador?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-400 leading-relaxed pt-3 border-t border-slate-800/60 mt-3">
+            Você não perde nada! O PROSPER possui recurso de <strong>Fazer Backup (.JSON) em 1 clique</strong>. Basta baixar o backup em um pendrive ou na nuvem de sua preferência e restaurar no novo computador a qualquer momento.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-14 border-t border-slate-800/60 bg-[#05080e] text-center text-xs text-slate-500 space-y-4">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <div class="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">P</div>
+        <span class="font-bold text-slate-300">PROSPER Gestão Financeira</span>
+        <span>• Todos os direitos reservados.</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-[11px]">
+        <a href="#solucao" class="hover:text-slate-300 transition-colors">Visão Geral</a>
+        <a href="#recursos" class="hover:text-slate-300 transition-colors">Recursos</a>
+        <a href="#checkout" class="hover:text-slate-300 transition-colors">Comprar</a>
+        <a href="#faq" class="hover:text-slate-300 transition-colors">Dúvidas</a>
+      </div>
+    </div>
+    <p class="text-[10px] text-slate-600 max-w-xl mx-auto">
+      Este software é uma ferramenta executiva de controle financeiro e controladoria para empresas. Os resultados obtidos dependem da correta alimentação e disciplina contábil do usuário.
+    </p>
+  </footer>
+
+  <script>
+    // Inicializa todos os ícones da biblioteca Lucide
+    lucide.createIcons();
+  </script>
+</body>
+</html>
