@@ -3,4 +3,4 @@ Allow: /
 Disallow: /Obrigado/
 Disallow: /obrigado/
 
-Sitemap: https://www.prospergestao.com.br/sitemap.xml
+Sitemap: https://prospergestao.com.br/sitemap.xml
