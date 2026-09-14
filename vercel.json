@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/obrigado", "destination": "/Obrigado/index.html" },
+    { "source": "/Obrigado", "destination": "/Obrigado/index.html" },
+    { "source": "/download", "destination": "/download.html" },
+    { "source": "/privacidade", "destination": "/privacidade.html" },
+    { "source": "/termos", "destination": "/termos.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
