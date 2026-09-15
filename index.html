@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="PROSPER">
 <meta property="og:title" content="PROSPER | Gestão Financeira Empresarial para Windows">
 <meta property="og:description" content="Software de gestão financeira 100% offline: DRE automática, contas a pagar e fluxo de caixa. Pagamento único por R$197 vitalício.">
-<meta property="og:image" content="https://www.prospergestao.com.br/og-cover.png">
+<meta property="og:image" content="https://prospergestao.com.br/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -23,7 +23,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PROSPER | Gestão Financeira Empresarial para Windows">
 <meta name="twitter:description" content="Software de gestão financeira 100% offline para Windows. Sem mensalidades, pagamento único de R$197.">
-<meta name="twitter:image" content="https://www.prospergestao.com.br/og-cover.png">
+<meta name="twitter:image" content="https://prospergestao.com.br/og-cover.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 
 <meta name="theme-color" content="#06110d">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -83,7 +87,6 @@
         <a href="#recursos" class="hover:text-emerald-600 transition">Recursos</a>
         <a href="#oferta" class="hover:text-emerald-600 transition">Oferta</a>
         <a href="#faq" class="hover:text-emerald-600 transition">Dúvidas</a>
-        <a href="/download" class="hover:text-emerald-600 transition">Download Oficial</a>
         <a href="/privacidade" class="hover:text-emerald-600 transition">Política de Privacidade</a>
         <a href="/termos" class="hover:text-emerald-600 transition">Termos de Uso</a>
       </div>
@@ -92,7 +95,7 @@
     <div class="mt-8 flex flex-col gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left text-[11px] text-slate-400">
       <div>
         <p class="font-bold text-slate-700">PROSPER Soluções Empresariais • Rafael F. Oliveira</p>
-        <p class="mt-0.5 text-slate-500">CNPJ: 00.000.000/0001-00 • Belém - PA, Brasil</p>
+        <p class="mt-0.5 text-slate-500">CNPJ sob registro • Belém - PA, Brasil</p>
         <p class="mt-0.5">Suporte: <a href="mailto:financas.feroli@gmail.com" class="text-slate-500 hover:text-emerald-600">financas.feroli@gmail.com</a> • WhatsApp: <a href="https://api.whatsapp.com/send?phone=5591987545861" target="_blank" rel="noopener" class="text-slate-500 hover:text-emerald-600">(91) 98754-5861</a></p>
       </div>
       <div class="sm:text-right">
@@ -104,4 +107,39 @@
 </footer>
 <div class="mobile-cta fixed inset-x-0 bottom-0 z-50 hidden border-t border-slate-200 bg-white/95 p-3 shadow-2xl backdrop-blur"><div class="flex items-center gap-3"><div class="flex-1"><b class="font-mono text-lg">R$197</b><small class="block text-[10px] text-slate-500">Pagamento único</small></div><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="rounded-full bg-emerald-500 px-5 py-3 text-sm font-black text-white">Garantir agora</a></div></div>
 <script>document.querySelectorAll('[data-buy]').forEach(function(a){a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'PROSPER Gestão Financeira',value:197,currency:'BRL'});if(typeof gtag==='function')gtag('event','begin_checkout',{value:197,currency:'BRL',items:[{item_name:'PROSPER Gestão Financeira',price:197,quantity:1}]});})});</script>
+
+<!-- Banner LGPD / Cookies -->
+<div id="lgpd-banner" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-[70] hidden rounded-2xl border border-slate-700/80 bg-slate-900/95 p-4 text-xs text-slate-200 shadow-2xl backdrop-blur-md transition-all duration-300">
+  <div class="flex items-start gap-3">
+    <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+    </div>
+    <div class="flex-1 space-y-1">
+      <p class="font-bold text-white">Privacidade & Cookies</p>
+      <p class="text-slate-300 leading-relaxed text-[11px]">Utilizamos cookies essenciais e métricas de desempenho para melhorar sua experiência. Ao navegar, você concorda com nossos <a href="/termos" class="text-emerald-400 underline hover:text-emerald-300">Termos</a> e <a href="/privacidade" class="text-emerald-400 underline hover:text-emerald-300">Privacidade</a>.</p>
+    </div>
+  </div>
+  <div class="mt-3 flex justify-end">
+    <button id="lgpd-accept" class="rounded-xl bg-emerald-500 px-4 py-2 text-xs font-bold text-white shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400 active:scale-95">Aceitar e Continuar</button>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    if (!localStorage.getItem('prosper_lgpd_consent')) {
+      var b = document.getElementById('lgpd-banner');
+      if (b) {
+        setTimeout(function(){ b.classList.remove('hidden'); }, 600);
+        var btn = document.getElementById('lgpd-accept');
+        if (btn) {
+          btn.addEventListener('click', function(){
+            localStorage.setItem('prosper_lgpd_consent', 'accepted');
+            b.classList.add('hidden');
+          });
+        }
+      }
+    }
+  } catch(e) {}
+})();
+</script>
 </body></html>
