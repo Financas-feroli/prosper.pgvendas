@@ -57,11 +57,11 @@ body { margin:0; font-family:Inter,system-ui,sans-serif; color:var(--ink); backg
     </p>
 
     <div class="mt-8 max-w-md mx-auto space-y-3">
-      <a id="downloadBtn" href="https://drive.google.com/file/d/1qRQZGGp8hLabMjIi2ccP8HxukYNsKQMC/view?usp=drive_link" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-lg py-5 px-6 shadow-xl shadow-emerald-500/25 transition hover:-translate-y-0.5 active:scale-[.99]">
+      <a id="downloadBtn" href="https://drive.usercontent.google.com/download?id=1qRQZGGp8hLabMjIi2ccP8HxukYNsKQMC&export=download&confirm=t" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-lg py-5 px-6 shadow-xl shadow-emerald-500/25 transition hover:-translate-y-0.5 active:scale-[.99]">
         <span class="text-2xl">↓</span> BAIXAR AGORA (.EXE)
       </a>
       <p class="text-xs text-slate-400 font-medium">
-        Compatível com Windows 10 e Windows 11 (64 bits) • Tamanho: ~114 MB
+        Compatível com Windows 10 e Windows 11 (64 bits) • Tamanho: ~110 MB
       </p>
     </div>
   </div>
@@ -103,7 +103,7 @@ body { margin:0; font-family:Inter,system-ui,sans-serif; color:var(--ink); backg
     <div class="mt-5 p-4 rounded-2xl bg-slate-900 text-slate-300 text-xs space-y-1">
       <span class="text-emerald-400 font-bold uppercase tracking-wider text-[10px]">Hash de Autenticidade (SHA-256):</span>
       <div class="mono text-[11px] text-slate-200 break-all select-all font-bold">
-        864F23FB4507CFF5EF120FD60E3B04554B91A4CE55C9F7013D980AE616749B89
+        68F0AC9B5275CB9A35DA543B060A592E37A2D19F3A3243F316D69A1D3D9B0769
       </div>
     </div>
   </section>
@@ -211,5 +211,12 @@ body { margin:0; font-family:Inter,system-ui,sans-serif; color:var(--ink); backg
   </div>
 </footer>
 
+<script src="download-config.js"></script>
+<script>
+  if (window.PROSPER_DOWNLOAD && window.PROSPER_DOWNLOAD.url) {
+    const btn = document.getElementById('downloadBtn');
+    if (btn) btn.href = window.PROSPER_DOWNLOAD.url;
+  }
+</script>
 </body>
 </html>
