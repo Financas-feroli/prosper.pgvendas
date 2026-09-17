@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Configuração Oficial de Distribuição do Instalador PROSPER Desktop
  * 
  * Centraliza o link de download e metadados de integridade.
@@ -6,9 +6,9 @@
  * automaticamente sincronizados a cada build.
  */
 window.PROSPER_DOWNLOAD = {
-  // Link oficial direto (GitHub Releases ou link direto)
-  url: "https://drive.usercontent.google.com/download?id=1qRQZGGp8hLabMjIi2ccP8HxukYNsKQMC&export=download&confirm=t",
-  // Link direto de fallback Google Drive (export direto sem tela intermediária de preview)
+  // Link oficial direto via CDN mundial da Microsoft/GitHub Releases
+  url: "https://github.com/Financas-feroli/prosper-desktop/releases/download/v2.4.0/PROSPER.Gestao.Financeira.Setup.2.4.0.exe",
+  // Link direto de fallback Google Drive
   directDriveUrl: "https://drive.usercontent.google.com/download?id=1qRQZGGp8hLabMjIi2ccP8HxukYNsKQMC&export=download&confirm=t",
   version: "2.4.0",
   sizeFormatted: "109.9 MB",
