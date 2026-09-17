@@ -53,7 +53,102 @@
 
 <section class="relative overflow-hidden bg-white"><div class="absolute inset-0 gridbg"></div><div class="absolute inset-0 glow"></div><div class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:py-24">
 <div><div class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-extrabold uppercase tracking-wide text-emerald-700"><i class="h-2 w-2 rounded-full bg-emerald-500"></i> Gestão financeira empresarial</div><h1 class="text-4xl font-black leading-[1.05] tracking-[-.04em] sm:text-5xl lg:text-6xl">Sua empresa sabe <span class="grad">exatamente</span> para onde está indo o dinheiro?</h1><p class="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">O <b class="text-slate-900">PROSPER</b> reúne receitas, despesas, centros de custos, fluxo de caixa e DRE em uma única visão para você <b class="text-slate-900">entender o resultado da sua empresa e decidir melhor.</b></p><div class="mt-7 flex flex-col gap-3 sm:flex-row"><a href="#oferta" class="rounded-full bg-slate-950 px-7 py-4 text-center text-sm font-extrabold text-white shadow-xl hover:bg-slate-800">Quero ter controle financeiro →</a><a href="#recursos" class="rounded-full border border-slate-200 bg-white px-7 py-4 text-center text-sm font-bold text-slate-700">Ver o que o sistema faz</a></div><div class="mt-5 flex flex-wrap gap-4 text-xs font-semibold text-slate-500"><span>✓ Windows 10/11</span><span>✓ Operação local</span><span>✓ Pagamento único</span><span>✓ 7 dias de garantia</span></div></div>
-<div class="relative"><div class="absolute -inset-5 rounded-[32px] bg-emerald-400/10 blur-2xl"></div><div class="mock relative overflow-hidden rounded-2xl bg-slate-900 text-white"><div class="flex h-10 items-center justify-between border-b border-slate-800 bg-slate-950 px-4"><div class="flex gap-1.5"><i class="h-2.5 w-2.5 rounded-full bg-red-400"></i><i class="h-2.5 w-2.5 rounded-full bg-amber-400"></i><i class="h-2.5 w-2.5 rounded-full bg-emerald-400"></i></div><span class="text-[10px] font-bold text-slate-500">PROSPER • Dashboard</span><span class="text-[10px] font-bold text-emerald-400">● LOCAL</span></div><div class="grid grid-cols-12"><aside class="col-span-3 hidden min-h-[360px] bg-slate-950 p-4 text-[9px] text-slate-500 sm:block"><b class="mb-4 block uppercase tracking-widest">Menu</b><div class="rounded-lg bg-emerald-500/15 p-2 font-bold text-emerald-400">Dashboard</div><div class="p-2">Lançamentos</div><div class="p-2">Contas</div><div class="p-2">Fluxo de caixa</div><div class="p-2">DRE</div><div class="p-2">Centros de custos</div></aside><main class="col-span-12 p-4 sm:col-span-9"><div class="mb-4"><small class="text-[9px] font-bold uppercase tracking-widest text-slate-500">Visão geral</small><h3 class="font-extrabold">Resultado financeiro</h3></div><div class="grid grid-cols-3 gap-2"><div class="rounded-xl bg-white p-3 text-slate-900"><small class="text-[8px] text-slate-400">RECEITAS</small><b class="mt-1 block font-mono text-sm text-emerald-600">R$ 71.815</b></div><div class="rounded-xl bg-white p-3 text-slate-900"><small class="text-[8px] text-slate-400">DESPESAS</small><b class="mt-1 block font-mono text-sm">R$ 42.540</b></div><div class="rounded-xl bg-white p-3 text-slate-900"><small class="text-[8px] text-slate-400">RESULTADO</small><b class="mt-1 block font-mono text-sm text-emerald-600">R$ 29.275</b></div></div><div class="mt-3 rounded-xl bg-white p-3"><div class="flex justify-between text-[9px] font-bold text-slate-700"><span>Fluxo de caixa projetado</span><span class="text-emerald-600">30 dias</span></div><svg viewBox="0 0 420 100" class="mt-2 h-28 w-full"><path d="M0 78 C45 70 60 42 100 52 S150 32 195 44 S240 61 280 35 S330 43 372 18 S405 20 420 10" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"/><path d="M0 78 C45 70 60 42 100 52 S150 32 195 44 S240 61 280 35 S330 43 372 18 S405 20 420 10 L420 100 L0 100Z" fill="#10b981" opacity=".09"/></svg></div></main></div></div></div></div></section>
+<div class="relative" id="product-carousel">
+  <div class="absolute -inset-5 rounded-[32px] bg-emerald-500/15 blur-2xl -z-10"></div>
+  
+  <!-- Janela Desktop Oficial do PROSPER -->
+  <div class="mock relative overflow-hidden rounded-2xl bg-slate-950 text-white border border-slate-800/80 shadow-2xl">
+    
+    <!-- Barra de Título da Janela -->
+    <div class="flex h-10 items-center justify-between border-b border-slate-800 bg-slate-950 px-4 select-none">
+      <div class="flex items-center gap-1.5">
+        <span class="h-2.5 w-2.5 rounded-full bg-rose-500/90"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-amber-500/90"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/90"></span>
+      </div>
+      <span id="carouselTitle" class="text-[11px] font-bold text-slate-300 tracking-wide transition-all duration-300">
+        PROSPER • Dashboard Executivo
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        100% OFFLINE (SQLITE)
+      </span>
+    </div>
+
+    <!-- Container do Carrossel de Imagens Reais -->
+    <div class="relative w-full overflow-hidden bg-slate-900 group" style="aspect-ratio: 1024/525;">
+      
+      <!-- Slide 1: Dashboard Executivo -->
+      <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-100 scale-100 z-10" data-index="0" data-title="PROSPER • Dashboard Executivo">
+        <img src="screenshots/screen-1-dashboard.png" alt="Tela do Dashboard Executivo do PROSPER" class="w-full h-full object-cover select-none" fetchpriority="high">
+      </div>
+
+      <!-- Slide 2: DRE Gerencial -->
+      <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="1" data-title="PROSPER • Relatórios & DRE Gerencial">
+        <img src="screenshots/screen-2-dre.png" alt="Tela de Demonstrativo de Resultados DRE no PROSPER" class="w-full h-full object-cover select-none" loading="lazy">
+      </div>
+
+      <!-- Slide 3: Lançamentos & Extrato Geral -->
+      <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="2" data-title="PROSPER • Lançamentos & Extrato Geral">
+        <img src="screenshots/screen-3-lancamentos.png" alt="Tela de Lançamentos e Conciliação no PROSPER" class="w-full h-full object-cover select-none" loading="lazy">
+      </div>
+
+      <!-- Slide 4: Categorias & Centros de Custo -->
+      <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="3" data-title="PROSPER • Categorias & Centros de Custo">
+        <img src="screenshots/screen-4-centros-custo.png" alt="Tela de Categorias e Centros de Custo no PROSPER" class="w-full h-full object-cover select-none" loading="lazy">
+      </div>
+
+      <!-- Slide 5: Previsto vs Realizado -->
+      <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="4" data-title="PROSPER • Previsto vs Realizado">
+        <img src="screenshots/screen-5-previsto-realizado.png" alt="Tela de Previsto vs Realizado no PROSPER" class="w-full h-full object-cover select-none" loading="lazy">
+      </div>
+
+      <!-- Botões de Navegação Esquerda / Direita -->
+      <button id="carouselPrev" aria-label="Tela anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/15 backdrop-blur grid place-items-center opacity-70 group-hover:opacity-100 transition hover:scale-105 z-20 shadow-xl cursor-pointer">
+        <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="carouselNext" aria-label="Próxima tela" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/15 backdrop-blur grid place-items-center opacity-70 group-hover:opacity-100 transition hover:scale-105 z-20 shadow-xl cursor-pointer">
+        <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+
+      <!-- Badge Flutuante no canto da imagem -->
+      <div class="absolute bottom-3 left-3 z-20 hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur border border-white/10 text-[10px] text-slate-300">
+        <span class="text-emerald-400 font-bold">●</span> Captura real do software
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Navegação Rápida (Abas Interativas) -->
+    <div class="border-t border-slate-800/80 bg-slate-950 p-2.5 sm:p-3">
+      <div class="flex items-center justify-between gap-1 overflow-x-auto no-scrollbar" id="carouselPills">
+        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-bold transition text-center truncate bg-emerald-500 text-slate-950 shadow-md" data-target="0">
+          Dashboard
+        </button>
+        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="1">
+          DRE
+        </button>
+        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="2">
+          Extrato
+        </button>
+        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="3">
+          Centros Custo
+        </button>
+        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="4">
+          Previsto x Real
+        </button>
+      </div>
+
+      <!-- Pontos indicadores de progresso -->
+      <div class="mt-2.5 flex items-center justify-center gap-1.5" id="carouselDots">
+        <button type="button" aria-label="Ir para tela 1" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-6 bg-emerald-400" data-target="0"></button>
+        <button type="button" aria-label="Ir para tela 2" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500" data-target="1"></button>
+        <button type="button" aria-label="Ir para tela 3" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500" data-target="2"></button>
+        <button type="button" aria-label="Ir para tela 4" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500" data-target="3"></button>
+        <button type="button" aria-label="Ir para tela 5" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500" data-target="4"></button>
+      </div>
+    </div>
+
+  </div>
+</div></div></section>
 
 <section id="problema" class="border-y border-slate-200 bg-slate-50 py-16 lg:py-20"><div class="mx-auto max-w-6xl px-4 sm:px-6"><div class="max-w-2xl"><span class="text-xs font-extrabold uppercase tracking-[.15em] text-emerald-600">O problema</span><h2 class="mt-2 text-3xl font-black tracking-tight sm:text-4xl">O problema não é apenas quanto entra. É não saber o que está acontecendo.</h2><p class="mt-4 leading-7 text-slate-600">Quando os números ficam espalhados em planilhas, extratos e anotações, a gestão vira tentativa e erro.</p></div><div class="mt-9 grid gap-5 md:grid-cols-3"><article class="lift card rounded-2xl border border-slate-200 bg-white p-6"><b class="font-mono text-emerald-600">01</b><h3 class="mt-4 text-lg font-extrabold">Saldo não é lucro</h3><p class="mt-2 text-sm leading-6 text-slate-600">Dinheiro disponível na conta não mostra sozinho se a operação está dando resultado.</p></article><article class="lift card rounded-2xl border border-slate-200 bg-white p-6"><b class="font-mono text-emerald-600">02</b><h3 class="mt-4 text-lg font-extrabold">Despesas sem visão</h3><p class="mt-2 text-sm leading-6 text-slate-600">Sem categorias e centros de custos, fica difícil descobrir onde o dinheiro está sendo consumido.</p></article><article class="lift card rounded-2xl border border-slate-200 bg-white p-6"><b class="font-mono text-emerald-600">03</b><h3 class="mt-4 text-lg font-extrabold">O futuro surpreende</h3><p class="mt-2 text-sm leading-6 text-slate-600">Compromissos e recebimentos precisam ser vistos antes de pressionarem o caixa.</p></article></div></div></section>
 
@@ -140,6 +235,153 @@
       }
     }
   } catch(e) {}
+})();
+</script>
+
+<!-- Script do Carrossel de Telas Reais -->
+<script>
+(function() {
+  var carousel = document.getElementById('product-carousel');
+  if (!carousel) return;
+
+  var slides = carousel.querySelectorAll('.carousel-slide');
+  var pills = carousel.querySelectorAll('.carousel-pill');
+  var dots = carousel.querySelectorAll('.carousel-dot');
+  var titleEl = document.getElementById('carouselTitle');
+  var prevBtn = document.getElementById('carouselPrev');
+  var nextBtn = document.getElementById('carouselNext');
+
+  var currentIndex = 0;
+  var totalSlides = slides.length;
+  var autoPlayTimer = null;
+  var autoPlayDelay = 4500;
+
+  function setSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+
+    // Atualizar slides
+    slides.forEach(function(slide, i) {
+      if (i === currentIndex) {
+        slide.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'z-0');
+        slide.classList.add('opacity-100', 'scale-100', 'z-10');
+        if (titleEl && slide.dataset.title) {
+          titleEl.textContent = slide.dataset.title;
+        }
+      } else {
+        slide.classList.remove('opacity-100', 'scale-100', 'z-10');
+        slide.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'z-0');
+      }
+    });
+
+    // Atualizar pills (abas de navegacao)
+    pills.forEach(function(pill, i) {
+      if (i === currentIndex) {
+        pill.className = 'carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-bold transition text-center truncate bg-emerald-500 text-slate-950 shadow-md';
+      } else {
+        pill.className = 'carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate';
+      }
+    });
+
+    // Atualizar dots
+    dots.forEach(function(dot, i) {
+      if (i === currentIndex) {
+        dot.className = 'carousel-dot h-1.5 rounded-full transition-all duration-300 w-6 bg-emerald-400';
+      } else {
+        dot.className = 'carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500';
+      }
+    });
+  }
+
+  function nextSlide() {
+    setSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    setSlide(currentIndex - 1);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      nextSlide();
+      resetAutoPlay();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      prevSlide();
+      resetAutoPlay();
+    });
+  }
+
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = parseInt(pill.getAttribute('data-target'), 10);
+      if (!isNaN(target)) {
+        setSlide(target);
+        resetAutoPlay();
+      }
+    });
+  });
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = parseInt(dot.getAttribute('data-target'), 10);
+      if (!isNaN(target)) {
+        setSlide(target);
+        resetAutoPlay();
+      }
+    });
+  });
+
+  function startAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(nextSlide, autoPlayDelay);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  carousel.addEventListener('mouseenter', stopAutoPlay);
+  carousel.addEventListener('mouseleave', startAutoPlay);
+
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  carousel.addEventListener('touchstart', function(e) {
+    stopAutoPlay();
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 45) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    startAutoPlay();
+  }, { passive: true });
+
+  startAutoPlay();
 })();
 </script>
 </body></html>
