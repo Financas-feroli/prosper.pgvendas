@@ -51,27 +51,28 @@
 <body class="bg-slate-50 text-slate-900">
 <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl"><div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"><a href="#" class="flex items-center gap-3"><img src="favicon.png" alt="PROSPER" class="w-10 h-10 object-contain drop-shadow-md"><span><b class="block text-sm">PROSPER</b><small class="text-[9px] font-bold uppercase tracking-[.18em] text-slate-400">Gestão Financeira</small></span></a><nav class="hidden gap-7 text-sm font-semibold text-slate-600 md:flex"><a href="#problema">O problema</a><a href="#recursos">Recursos</a><a href="#oferta">Oferta</a><a href="#faq">Dúvidas</a></nav><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-extrabold text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600">Quero o PROSPER</a></div></header>
 
-<section class="relative overflow-hidden bg-white"><div class="absolute inset-0 gridbg"></div><div class="absolute inset-0 glow"></div><div class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:py-24">
+<section class="relative overflow-hidden bg-white"><div class="absolute inset-0 gridbg"></div><div class="absolute inset-0 glow"></div><div class="relative mx-auto grid max-w-6xl items-center gap-8 lg:gap-12 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:py-24">
 <div><div class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-extrabold uppercase tracking-wide text-emerald-700"><i class="h-2 w-2 rounded-full bg-emerald-500"></i> Gestão financeira empresarial</div><h1 class="text-4xl font-black leading-[1.05] tracking-[-.04em] sm:text-5xl lg:text-6xl">Sua empresa sabe <span class="grad">exatamente</span> para onde está indo o dinheiro?</h1><p class="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">O <b class="text-slate-900">PROSPER</b> reúne receitas, despesas, centros de custos, fluxo de caixa e DRE em uma única visão para você <b class="text-slate-900">entender o resultado da sua empresa e decidir melhor.</b></p><div class="mt-7 flex flex-col gap-3 sm:flex-row"><a href="#oferta" class="rounded-full bg-slate-950 px-7 py-4 text-center text-sm font-extrabold text-white shadow-xl hover:bg-slate-800">Quero ter controle financeiro →</a><a href="#recursos" class="rounded-full border border-slate-200 bg-white px-7 py-4 text-center text-sm font-bold text-slate-700">Ver o que o sistema faz</a></div><div class="mt-5 flex flex-wrap gap-4 text-xs font-semibold text-slate-500"><span>✓ Windows 10/11</span><span>✓ Operação local</span><span>✓ Pagamento único</span><span>✓ 7 dias de garantia</span></div></div>
 <div class="relative" id="product-carousel">
-  <div class="absolute -inset-5 rounded-[32px] bg-emerald-500/15 blur-2xl -z-10"></div>
+  <div class="absolute -inset-2 sm:-inset-5 rounded-[32px] bg-emerald-500/15 blur-2xl -z-10"></div>
   
   <!-- Janela Desktop Oficial do PROSPER -->
-  <div class="mock relative overflow-hidden rounded-2xl bg-slate-950 text-white border border-slate-800/80 shadow-2xl">
+  <div class="mock relative overflow-hidden rounded-xl sm:rounded-2xl bg-slate-950 text-white border border-slate-800/80 shadow-2xl">
     
     <!-- Barra de Título da Janela -->
-    <div class="flex h-10 items-center justify-between border-b border-slate-800 bg-slate-950 px-4 select-none">
-      <div class="flex items-center gap-1.5">
-        <span class="h-2.5 w-2.5 rounded-full bg-rose-500/90"></span>
-        <span class="h-2.5 w-2.5 rounded-full bg-amber-500/90"></span>
-        <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/90"></span>
+    <div class="flex h-9 sm:h-10 items-center justify-between border-b border-slate-800 bg-slate-950 px-3 sm:px-4 select-none">
+      <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <span class="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-rose-500/90"></span>
+        <span class="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-amber-500/90"></span>
+        <span class="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-500/90"></span>
       </div>
-      <span id="carouselTitle" class="text-[11px] font-bold text-slate-300 tracking-wide transition-all duration-300">
+      <span id="carouselTitle" class="text-[10px] sm:text-[11px] font-bold text-slate-300 tracking-wide transition-all duration-300 truncate max-w-[150px] sm:max-w-none text-center px-1">
         PROSPER • Dashboard Executivo
       </span>
-      <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[10px] font-bold">
+      <span class="inline-flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[9px] sm:text-[10px] font-bold shrink-0">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-        100% OFFLINE (SQLITE)
+        <span class="hidden sm:inline">100% OFFLINE (SQLITE)</span>
+        <span class="sm:hidden">OFFLINE</span>
       </span>
     </div>
 
@@ -104,11 +105,11 @@
       </div>
 
       <!-- Botões de Navegação Esquerda / Direita -->
-      <button id="carouselPrev" aria-label="Tela anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/15 backdrop-blur grid place-items-center opacity-70 group-hover:opacity-100 transition hover:scale-105 z-20 shadow-xl cursor-pointer">
-        <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      <button id="carouselPrev" aria-label="Tela anterior" class="absolute left-1.5 sm:left-3 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/15 backdrop-blur grid place-items-center opacity-80 sm:opacity-70 sm:group-hover:opacity-100 transition hover:scale-105 z-20 shadow-xl cursor-pointer">
+        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
       </button>
-      <button id="carouselNext" aria-label="Próxima tela" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/15 backdrop-blur grid place-items-center opacity-70 group-hover:opacity-100 transition hover:scale-105 z-20 shadow-xl cursor-pointer">
-        <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      <button id="carouselNext" aria-label="Próxima tela" class="absolute right-1.5 sm:right-3 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/15 backdrop-blur grid place-items-center opacity-80 sm:opacity-70 sm:group-hover:opacity-100 transition hover:scale-105 z-20 shadow-xl cursor-pointer">
+        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </button>
 
       <!-- Badge Flutuante no canto da imagem -->
@@ -118,28 +119,28 @@
     </div>
 
     <!-- Barra Inferior de Navegação Rápida (Abas Interativas) -->
-    <div class="border-t border-slate-800/80 bg-slate-950 p-2.5 sm:p-3">
-      <div class="flex items-center justify-between gap-1 overflow-x-auto no-scrollbar" id="carouselPills">
-        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-bold transition text-center truncate bg-emerald-500 text-slate-950 shadow-md" data-target="0">
+    <div class="border-t border-slate-800/80 bg-slate-950 p-2 sm:p-3">
+      <div class="grid grid-cols-5 gap-1 sm:gap-1.5" id="carouselPills">
+        <button type="button" class="carousel-pill py-1.5 px-0.5 sm:px-2 rounded-lg text-[10px] sm:text-xs font-bold tracking-tight transition-all text-center truncate bg-emerald-500 text-slate-950 shadow-md" data-target="0">
           Dashboard
         </button>
-        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="1">
+        <button type="button" class="carousel-pill py-1.5 px-0.5 sm:px-2 rounded-lg text-[10px] sm:text-xs font-semibold tracking-tight text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all text-center truncate" data-target="1">
           DRE
         </button>
-        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="2">
+        <button type="button" class="carousel-pill py-1.5 px-0.5 sm:px-2 rounded-lg text-[10px] sm:text-xs font-semibold tracking-tight text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all text-center truncate" data-target="2">
           Extrato
         </button>
-        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="3">
-          Centros Custo
+        <button type="button" class="carousel-pill py-1.5 px-0.5 sm:px-2 rounded-lg text-[10px] sm:text-xs font-semibold tracking-tight text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all text-center truncate" data-target="3">
+          <span class="sm:hidden">Centros</span><span class="hidden sm:inline">Centros Custo</span>
         </button>
-        <button type="button" class="carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate" data-target="4">
-          Previsto x Real
+        <button type="button" class="carousel-pill py-1.5 px-0.5 sm:px-2 rounded-lg text-[10px] sm:text-xs font-semibold tracking-tight text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all text-center truncate" data-target="4">
+          <span class="sm:hidden">Previsto</span><span class="hidden sm:inline">Previsto x Real</span>
         </button>
       </div>
 
       <!-- Pontos indicadores de progresso -->
-      <div class="mt-2.5 flex items-center justify-center gap-1.5" id="carouselDots">
-        <button type="button" aria-label="Ir para tela 1" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-6 bg-emerald-400" data-target="0"></button>
+      <div class="mt-2 sm:mt-2.5 flex items-center justify-center gap-1.5" id="carouselDots">
+        <button type="button" aria-label="Ir para tela 1" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-5 sm:w-6 bg-emerald-400" data-target="0"></button>
         <button type="button" aria-label="Ir para tela 2" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500" data-target="1"></button>
         <button type="button" aria-label="Ir para tela 3" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500" data-target="2"></button>
         <button type="button" aria-label="Ir para tela 4" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500" data-target="3"></button>
@@ -278,16 +279,16 @@
     // Atualizar pills (abas de navegacao)
     pills.forEach(function(pill, i) {
       if (i === currentIndex) {
-        pill.className = 'carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-bold transition text-center truncate bg-emerald-500 text-slate-950 shadow-md';
+        pill.className = 'carousel-pill py-1.5 px-0.5 sm:px-2 rounded-lg text-[10px] sm:text-xs font-bold tracking-tight transition-all text-center truncate bg-emerald-500 text-slate-950 shadow-md';
       } else {
-        pill.className = 'carousel-pill flex-1 min-w-[75px] py-1.5 px-2 rounded-lg text-[10px] sm:text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition text-center truncate';
+        pill.className = 'carousel-pill py-1.5 px-0.5 sm:px-2 rounded-lg text-[10px] sm:text-xs font-semibold tracking-tight text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all text-center truncate';
       }
     });
 
     // Atualizar dots
     dots.forEach(function(dot, i) {
       if (i === currentIndex) {
-        dot.className = 'carousel-dot h-1.5 rounded-full transition-all duration-300 w-6 bg-emerald-400';
+        dot.className = 'carousel-dot h-1.5 rounded-full transition-all duration-300 w-5 sm:w-6 bg-emerald-400';
       } else {
         dot.className = 'carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-slate-700 hover:bg-slate-500';
       }
@@ -362,17 +363,23 @@
 
   var touchStartX = 0;
   var touchEndX = 0;
+  var touchStartY = 0;
+  var touchEndY = 0;
 
   carousel.addEventListener('touchstart', function(e) {
     stopAutoPlay();
     touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
   }, { passive: true });
 
   carousel.addEventListener('touchend', function(e) {
     touchEndX = e.changedTouches[0].screenX;
-    var diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 45) {
-      if (diff > 0) {
+    touchEndY = e.changedTouches[0].screenY;
+    var diffX = touchStartX - touchEndX;
+    var diffY = touchStartY - touchEndY;
+    // Aciona o swipe horizontal apenas se o movimento no eixo X for maior que no eixo Y
+    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
         nextSlide();
       } else {
         prevSlide();
