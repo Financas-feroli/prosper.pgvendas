@@ -79,9 +79,9 @@ section[id]{scroll-margin-top:88px}
 .offer-shell{box-shadow:0 35px 90px -45px rgba(2,44,34,.34)}
 .offer-highlight{box-shadow:0 16px 36px -20px rgba(16,185,129,.35)}
 .faq-item{transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}.faq-item[open]{border-color:#a7f3d0;box-shadow:0 18px 40px -28px rgba(15,23,42,.22)}
-.mobile-cta{padding-bottom:calc(.75rem + env(safe-area-inset-bottom))}
+.mobile-cta{display:none;padding-bottom:calc(.75rem + env(safe-area-inset-bottom))}
 @media(max-width:767px){
-  .mobile-cta{display:block!important}
+  .mobile-cta{display:block}
   body{padding-bottom:74px}
   .hero-shell{padding-top:2.75rem!important;padding-bottom:3.5rem!important}
   .hero-copy h1{font-size:2.25rem;line-height:1.08}
@@ -89,7 +89,17 @@ section[id]{scroll-margin-top:88px}
   .resource-group{border-radius:1.25rem}
   .compare-card{border-radius:1.25rem}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lift,.feature-card,.floating-anim-slow,.floating-anim-delayed,.faq-item{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lift,.feature-card,.floating-anim-slow,.floating-anim-delayed,.faq-item,.reveal{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}}
+
+/* Scroll Progress Bar */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#059669,#10b981,#34d399);z-index:999;width:0%;transition:width .1s linear}
+
+/* Scroll Reveal System */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
+.reveal.reveal-scale{transform:scale(.94) translateY(24px)}
+.reveal.reveal-left{transform:translateX(-36px)}
+.reveal.reveal-right{transform:translateX(36px)}
+.reveal.is-revealed{opacity:1!important;transform:translate(0,0) scale(1)!important}
 
 
 /* Responsive hardening: keeps every component inside the viewport without relying on horizontal clipping. */
@@ -168,8 +178,11 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PROSPER Gestão Financeira","applicationCategory":"FinanceApplication","operatingSystem":"Windows 10, Windows 11","description":"Software de gestão financeira empresarial para receitas, despesas, DRE, centros de custos e fluxo de caixa.","offers":{"@type":"Offer","price":"197.00","priceCurrency":"BRL","availability":"https://schema.org/InStock","url":"https://pay.kiwify.com.br/g1AjD9G"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O PROSPER tem mensalidade?","acceptedAnswer":{"@type":"Answer","text":"Não. A oferta é de R$197 em pagamento único, sem mensalidade do produto."}},{"@type":"Question","name":"Em quais computadores funciona?","acceptedAnswer":{"@type":"Answer","text":"O PROSPER é destinado a computadores e notebooks com Windows 10 ou Windows 11."}},{"@type":"Question","name":"Meus dados ficam na nuvem?","acceptedAnswer":{"@type":"Answer","text":"A aplicação trabalha localmente e utiliza SQLite para armazenamento dos dados."}},{"@type":"Question","name":"Posso importar OFX e CSV?","acceptedAnswer":{"@type":"Answer","text":"Sim. O sistema trabalha com arquivos OFX e CSV, conforme o formato disponibilizado pelo banco."}},{"@type":"Question","name":"Como recebo o produto?","acceptedAnswer":{"@type":"Answer","text":"Após a confirmação do pagamento, o acesso é disponibilizado pela área de membros da Kiwify, conforme as instruções da compra."}},{"@type":"Question","name":"Existe garantia?","acceptedAnswer":{"@type":"Answer","text":"A oferta possui garantia de 7 dias, conforme as condições apresentadas no checkout."}}]}</script>
+
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body class="bg-slate-50 text-slate-900">
+<div id="scroll-progress"></div>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <header class="header-shell sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
   <div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
@@ -316,32 +329,32 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
     <!-- Metrics Grid -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-100">
       <!-- Metric Item 1 -->
-      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0">
+      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="0">
         <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">100%</div>
         <div class="text-sm font-bold text-emerald-600 mt-1">Privacidade Local</div>
         <p class="text-xs text-slate-500 mt-1">Seus dados financeiros não ficam salvos em nuvens de terceiros.</p>
       </div>
       <!-- Metric Item 2 -->
-      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0">
+      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="100">
         <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Zero</div>
         <div class="text-sm font-bold text-emerald-600 mt-1">Mensalidades ou Taxas</div>
         <p class="text-xs text-slate-500 mt-1">Licença vitalícia em pagamento único com atualizações inclusas.</p>
       </div>
       <!-- Metric Item 3 -->
-      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0">
+      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="200">
         <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">&lt; 15 min</div>
         <div class="text-sm font-bold text-emerald-600 mt-1">Para Fechamento Diário</div>
         <p class="text-xs text-slate-500 mt-1">Conciliação bancária veloz através de extratos OFX e categorias.</p>
       </div>
       <!-- Metric Item 4 -->
-      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0">
+      <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="300">
         <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">DRE Real</div>
         <div class="text-sm font-bold text-emerald-600 mt-1">Competência e Caixa</div>
         <p class="text-xs text-slate-500 mt-1">Visão contábil e gerencial sem depender de planilhas quebradas.</p>
       </div>
     </div>
     <!-- Trust Badges Strip -->
-    <div class="mt-10 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-between gap-6 text-slate-400 text-xs">
+    <div class="mt-10 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-between gap-6 text-slate-400 text-xs reveal" data-delay="150">
       <span class="font-medium text-slate-500">Desenvolvido para empresários, diretores financeiros e gestores PME:</span>
       <div class="flex items-center gap-6 font-semibold tracking-wider uppercase text-[11px] text-slate-400">
         <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Indústrias</span>
@@ -354,9 +367,9 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
 </section>
 <!-- END: MetricAndValueRibbon -->
 
-<section id="problema" class="border-y border-slate-200 bg-slate-50 py-16 lg:py-20"><div class="mx-auto max-w-6xl px-4 sm:px-6"><div class="max-w-2xl"><span class="text-xs font-extrabold uppercase tracking-[.15em] text-emerald-600">O problema</span><h2 class="mt-2 text-3xl font-black tracking-tight sm:text-[36px]">O problema não é apenas quanto entra. É não saber o que está acontecendo.</h2><p class="mt-4 leading-7 text-slate-600">Quando os números ficam espalhados em planilhas, extratos e anotações, a gestão vira tentativa e erro.</p></div><div class="mt-9 grid gap-6 md:grid-cols-3">
+<section id="problema" class="border-y border-slate-200 bg-slate-50 py-16 lg:py-20"><div class="mx-auto max-w-6xl px-4 sm:px-6"><div class="max-w-2xl reveal"><span class="text-xs font-extrabold uppercase tracking-[.15em] text-emerald-600">O problema</span><h2 class="mt-2 text-3xl font-black tracking-tight sm:text-[36px]">O problema não é apenas quanto entra. É não saber o que está acontecendo.</h2><p class="mt-4 leading-7 text-slate-600">Quando os números ficam espalhados em planilhas, extratos e anotações, a gestão vira tentativa e erro.</p></div><div class="mt-9 grid gap-6 md:grid-cols-3">
   <!-- Card 01: Saldo não é lucro -->
-  <article class="lift card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+  <article class="lift card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all reveal" data-delay="0">
     <div>
       <div class="flex items-center justify-between">
         <span class="font-mono text-base font-extrabold text-emerald-600">01</span>
@@ -387,7 +400,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
   </article>
 
   <!-- Card 02: Despesas sem visão -->
-  <article class="lift card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+  <article class="lift card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all reveal" data-delay="150">
     <div>
       <div class="flex items-center justify-between">
         <span class="font-mono text-base font-extrabold text-emerald-600">02</span>
@@ -415,7 +428,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
   </article>
 
   <!-- Card 03: O futuro surpreende -->
-  <article class="lift card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+  <article class="lift card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all reveal" data-delay="300">
     <div>
       <div class="flex items-center justify-between">
         <span class="font-mono text-base font-extrabold text-emerald-600">03</span>
@@ -452,14 +465,14 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
   <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_650px_at_50%_-15%,rgba(16,185,129,.16),transparent_70%)]"></div>
   <div class="pointer-events-none absolute inset-0 gridbg opacity-30"></div>
   <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="mx-auto mb-7 max-w-2xl text-center sm:mb-9">
+    <div class="mx-auto mb-7 max-w-2xl text-center sm:mb-9 reveal">
       <span class="section-kicker text-[10px] font-extrabold uppercase text-emerald-400">Recursos essenciais</span>
       <h2 class="mt-2 text-2xl font-black tracking-tight sm:text-3xl">Finanças mais claras. Em um só lugar.</h2>
       <p class="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-400">Os recursos centrais para organizar, acompanhar e analisar a rotina financeira da empresa.</p>
     </div>
 
     <div class="grid gap-4 lg:grid-cols-3">
-      <article class="resource-group rounded-2xl p-5 sm:p-6">
+      <article class="resource-group rounded-2xl p-5 sm:p-6 reveal" data-delay="0">
         <div class="mb-4 flex items-start justify-between gap-4">
           <div><div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">01 · Controle</div><h3 class="mt-1 text-lg font-extrabold">Rotina financeira</h3></div>
           <div class="resource-icon grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-400">
@@ -473,7 +486,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
         </div>
       </article>
 
-      <article class="resource-group rounded-2xl p-5 sm:p-6">
+      <article class="resource-group rounded-2xl p-5 sm:p-6 reveal" data-delay="150">
         <div class="mb-4 flex items-start justify-between gap-4">
           <div><div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">02 · Análise</div><h3 class="mt-1 text-lg font-extrabold">Visão gerencial</h3></div>
           <div class="resource-icon grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-400">
@@ -487,7 +500,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
         </div>
       </article>
 
-      <article class="resource-group rounded-2xl p-5 sm:p-6">
+      <article class="resource-group rounded-2xl p-5 sm:p-6 reveal" data-delay="300">
         <div class="mb-4 flex items-start justify-between gap-4">
           <div><div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">03 · Operação</div><h3 class="mt-1 text-lg font-extrabold">Praticidade no dia a dia</h3></div>
           <div class="resource-icon grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-400">
@@ -502,7 +515,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
       </article>
     </div>
 
-    <div class="mt-5 flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left">
+    <div class="mt-5 flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left reveal">
       <p class="text-[11px] text-slate-500">Uma ferramenta de acompanhamento financeiro, sem a complexidade de um ERP completo.</p>
       <a href="#oferta" class="text-xs font-extrabold text-emerald-400 transition hover:text-emerald-300">Ver a oferta →</a>
     </div>
@@ -511,13 +524,13 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
 
 <section class="bg-white py-14 sm:py-16 lg:py-20">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="mx-auto max-w-2xl text-center">
+    <div class="mx-auto max-w-2xl text-center reveal">
       <span class="section-kicker text-[10px] font-extrabold uppercase text-emerald-600">Uma proposta diferente</span>
       <h2 class="mt-2 text-3xl font-black tracking-tight sm:text-4xl">Menos complexidade. Mais clareza para a rotina.</h2>
       <p class="mt-3 text-sm leading-6 text-slate-600 sm:text-base">Uma solução focada em acompanhamento financeiro, sem transformar a implantação em um projeto de TI.</p>
     </div>
     <div class="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-2">
-      <div class="compare-card rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+      <div class="compare-card rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7 reveal reveal-left">
         <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Em muitas soluções</div>
         <h3 class="mt-2 text-lg font-extrabold text-slate-900">Modelos que podem trazer mais camadas</h3>
         <ul class="mt-5 space-y-3 text-sm text-slate-600">
@@ -526,7 +539,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
           <li class="flex gap-3"><span class="text-slate-400">—</span><span>Planos e recursos conforme assinatura</span></li>
         </ul>
       </div>
-      <div class="compare-card rounded-2xl border border-emerald-300 bg-emerald-50 p-6 shadow-[0_18px_45px_-30px_rgba(16,185,129,.55)] sm:p-7">
+      <div class="compare-card rounded-2xl border border-emerald-300 bg-emerald-50 p-6 shadow-[0_18px_45px_-30px_rgba(16,185,129,.55)] sm:p-7 reveal reveal-right">
         <div class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-700">Com o PROSPER</div>
         <h3 class="mt-2 text-lg font-extrabold text-slate-900">Uma proposta direta para Windows</h3>
         <ul class="mt-5 space-y-3 text-sm text-slate-700">
@@ -536,19 +549,19 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
         </ul>
       </div>
     </div>
-    <p class="mt-3 text-center text-[10px] text-slate-400">Condições, disponibilidade e recursos conforme a oferta vigente.</p>
+    <p class="mt-3 text-center text-[10px] text-slate-400 reveal">Condições, disponibilidade e recursos conforme a oferta vigente.</p>
   </div>
 </section>
 
 <section class="bg-emerald-950 py-14 text-white sm:py-16 lg:py-20">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-      <div class="max-w-xl">
+      <div class="max-w-xl reveal reveal-left">
         <span class="section-kicker text-[10px] font-extrabold uppercase text-emerald-400">Operação local</span>
         <h2 class="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Seu ambiente financeiro fica no próprio computador.</h2>
         <p class="mt-4 text-sm leading-6 text-emerald-100/70 sm:text-base">O PROSPER foi desenvolvido para Windows e utiliza banco SQLite local. A proposta é reduzir a dependência de uma plataforma financeira em nuvem e manter a operação concentrada no computador.</p>
       </div>
-      <div class="grid gap-3 sm:grid-cols-2">
+      <div class="grid gap-3 sm:grid-cols-2 reveal reveal-right">
         <div class="rounded-2xl border border-emerald-800/80 bg-emerald-900/35 p-5"><div class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-300">Ambiente</div><b class="mt-1 block text-base">Windows 10/11</b><p class="mt-2 text-xs leading-5 text-emerald-100/55">Focado em computadores e notebooks Windows.</p></div>
         <div class="rounded-2xl border border-emerald-800/80 bg-emerald-900/35 p-5"><div class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-300">Dados</div><b class="mt-1 block text-base">Banco SQLite local</b><p class="mt-2 text-xs leading-5 text-emerald-100/55">Armazenamento local utilizado pela aplicação.</p></div>
         <div class="rounded-2xl border border-emerald-800/80 bg-emerald-900/35 p-5"><div class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-300">Conectividade</div><b class="mt-1 block text-base">Operação local</b><p class="mt-2 text-xs leading-5 text-emerald-100/55">A aplicação foi concebida para trabalhar localmente.</p></div>
@@ -558,13 +571,102 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
   </div>
 </section>
 
-<section id="oferta" class="relative overflow-hidden bg-slate-50 py-16 lg:py-24"><div class="absolute inset-0 glow opacity-70"></div><div class="relative mx-auto max-w-5xl px-4 sm:px-6"><div class="mb-10 text-center"><span class="rounded-full bg-emerald-100 px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-emerald-700">Oferta PROSPER</span><h2 class="mt-4 text-3xl font-black sm:text-5xl">Gestão financeira profissional. Sem mensalidade do produto.</h2><p class="mx-auto mt-4 max-w-xl text-slate-600">Adquira o sistema por um pagamento único e organize a gestão financeira da sua empresa.</p></div><div class="offer-shell overflow-hidden rounded-[28px] border border-slate-200 bg-white card"><div class="grid lg:grid-cols-2"><div class="bg-slate-950 p-7 text-white sm:p-10"><small class="font-extrabold uppercase tracking-[.18em] text-emerald-400">Licença PROSPER</small><h3 class="mt-4 text-2xl font-black">Tudo em um só lugar</h3><ul class="mt-7 space-y-4 text-sm text-slate-300"><li>✓ Receitas e despesas</li><li>✓ DRE gerencial</li><li>✓ Fluxo de caixa</li><li>✓ Centros de custos</li><li>✓ Contas a pagar e receber</li><li>✓ Importação OFX/CSV</li><li>✓ Dashboard e indicadores</li><li>✓ Aplicação para Windows</li><li>✓ Banco local SQLite</li></ul></div><div class="p-7 sm:p-10"><small class="font-bold text-slate-500">Pagamento único</small><div class="mt-1 font-mono text-5xl font-black tracking-tight sm:text-6xl">R$197</div><div class="mt-2 font-bold text-emerald-600">Sem mensalidade do produto</div><div class="mt-7 rounded-2xl border border-emerald-200 bg-emerald-50 p-5"><b class="text-emerald-900">Acesso pela área de membros da Kiwify</b><p class="mt-2 text-sm leading-6 text-emerald-900/70">Após a confirmação do pagamento, você recebe as instruções de acesso conforme a oferta.</p></div><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-6 flex w-full justify-center rounded-full bg-emerald-500 px-6 py-4 text-base font-black text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600">Quero o PROSPER por R$197 →</a><p class="mt-4 text-center text-xs font-semibold text-slate-500">Compra processada pela Kiwify • Garantia de 7 dias</p></div></div></div></div></section>
+<section id="oferta" class="relative bg-slate-100 py-16 lg:py-24">
+  <div class="absolute inset-0 glow opacity-40"></div>
+  <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
 
-<section class="bg-white py-16"><div class="mx-auto max-w-5xl px-4 sm:px-6"><div class="grid gap-5 md:grid-cols-3"><div class="rounded-2xl border border-slate-200 p-6"><b>“É complicado?”</b><p class="mt-2 text-sm leading-6 text-slate-600">A proposta é organizar a gestão financeira sem exigir um ERP completo.</p></div><div class="rounded-2xl border border-slate-200 p-6"><b>“E se eu não gostar?”</b><p class="mt-2 text-sm leading-6 text-slate-600">A oferta possui garantia de 7 dias, conforme as condições do checkout.</p></div><div class="rounded-2xl border border-slate-200 p-6"><b>“Funciona sem internet?”</b><p class="mt-2 text-sm leading-6 text-slate-600">O sistema foi desenvolvido para operação local no Windows.</p></div></div></div></section>
+    <!-- Kicker above card -->
+    <div class="mb-6 text-center reveal">
+      <span class="inline-block rounded-full bg-emerald-100 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[.18em] text-emerald-700">Oferta PROSPER</span>
+    </div>
 
-<section id="faq" class="border-y border-slate-200 bg-slate-50 py-16 lg:py-20"><div class="mx-auto max-w-3xl px-4 sm:px-6"><div class="text-center"><span class="text-xs font-extrabold uppercase tracking-[.15em] text-emerald-600">Perguntas frequentes</span><h2 class="mt-2 text-3xl font-black sm:text-4xl">Ainda ficou alguma dúvida?</h2></div><div class="mt-9 space-y-3"><details name="faq" class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-extrabold">O PROSPER tem mensalidade?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Não. A oferta apresentada é de R$197 em pagamento único, sem mensalidade do produto.</p></details><details name="faq" class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-extrabold">Em quais computadores funciona?</summary><p class="mt-3 text-sm leading-6 text-slate-600">O PROSPER é destinado a computadores e notebooks com Windows 10 ou Windows 11.</p></details><details name="faq" class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-extrabold">Meus dados ficam na nuvem?</summary><p class="mt-3 text-sm leading-6 text-slate-600">A aplicação trabalha localmente e utiliza SQLite para armazenamento dos dados.</p></details><details name="faq" class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-extrabold">Posso importar extratos bancários?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Sim. O sistema trabalha com arquivos OFX e CSV, conforme o formato disponibilizado pelo banco.</p></details><details name="faq" class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-extrabold">Como recebo o sistema?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Após a confirmação do pagamento, o acesso é disponibilizado pela área de membros da Kiwify, conforme as instruções da compra.</p></details><details name="faq" class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-extrabold">Existe garantia?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Sim. A oferta possui garantia de 7 dias, conforme as condições apresentadas no checkout.</p></details></div></div></section>
+    <!-- Main card: dark bg, two-column layout -->
+    <div class="offer-shell overflow-hidden rounded-[28px] bg-slate-950 shadow-[0_40px_100px_-30px_rgba(2,44,34,.45)] reveal reveal-scale">
+      <div class="grid lg:grid-cols-[1.15fr_.85fr]">
 
-<section class="bg-slate-950 py-16 text-white lg:py-24"><div class="mx-auto max-w-3xl px-4 text-center sm:px-6"><span class="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-400">Próximo passo</span><h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Pare de administrar sua empresa no escuro.</h2><p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">Organize seus números, enxergue o resultado e tome decisões melhores com uma visão financeira centralizada.</p><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-8 inline-flex rounded-full bg-emerald-500 px-8 py-4 text-base font-black text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600">Quero o PROSPER por R$197 →</a><p class="mt-4 text-xs text-slate-500">Pagamento único • Windows 10/11 • Garantia de 7 dias</p></div></section>
+        <!-- LEFT: headline + features -->
+        <div class="flex flex-col justify-between p-8 sm:p-10 lg:p-12">
+
+          <!-- Kicker line -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="h-px w-8 bg-emerald-500 block"></span>
+              <span class="text-[10px] font-extrabold uppercase tracking-[.2em] text-emerald-400">Licença PROSPER</span>
+            </div>
+
+            <!-- Big headline -->
+            <h2 class="text-3xl font-black leading-[1.1] tracking-[-0.03em] text-white sm:text-4xl lg:text-[2.65rem]">
+              Seu financeiro merece<br class="hidden sm:inline"> uma base<br class="hidden sm:inline"> mais sólida.
+            </h2>
+
+            <!-- Subtext -->
+            <p class="mt-5 max-w-sm text-sm leading-6 text-slate-400">
+              Tenha em um só sistema os recursos essenciais para organizar a rotina
+              <span class="text-emerald-400 font-semibold">financeira</span>
+              e enxergar a operação com clareza.
+            </p>
+
+            <!-- Feature checklist: 2 columns -->
+            <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-2.5 text-xs font-semibold text-slate-300">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>Receitas e despesas</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>Fluxo de caixa</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>DRE gerencial</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>Contas a pagar e receber</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>Centros de custo</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>Importação OFX/CSV</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>Dashboard e indicadores</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span>Banco local SQLite</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: price card (light panel) -->
+        <div class="flex items-center p-6 sm:p-8 lg:p-10">
+          <div class="w-full rounded-2xl bg-[#f0f7f2] p-6 sm:p-7">
+
+            <!-- Kicker -->
+            <p class="text-[10px] font-extrabold uppercase tracking-[.18em] text-slate-500">Licença para Windows</p>
+
+            <!-- Price -->
+            <div class="mt-3">
+              <div class="font-mono text-5xl font-black tracking-tight text-slate-900 sm:text-[3.5rem]">R$197</div>
+              <p class="mt-1.5 text-xs text-slate-500">Pagamento único. Sem mensalidade do produto.</p>
+            </div>
+
+            <!-- CTA button -->
+            <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy
+               class="mt-6 flex w-full items-center justify-between rounded-2xl bg-emerald-500 px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600 active:scale-[.98]">
+              <span>Quero o PROSPER</span>
+              <span>→</span>
+            </a>
+
+            <!-- Trust line -->
+            <p class="mt-3 text-center text-[10px] text-slate-400">Compra processada com segurança pela Kiwify</p>
+
+            <!-- Guarantee badge -->
+            <div class="mt-5 flex items-start gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-extrabold text-white">7</div>
+              <div>
+                <p class="text-xs font-bold text-slate-800">Garantia de 7 dias</p>
+                <p class="mt-0.5 text-[11px] leading-relaxed text-slate-500">Você tem o prazo informado no checkout para avaliar a sua compra.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-white py-16"><div class="mx-auto max-w-5xl px-4 sm:px-6"><div class="grid gap-5 md:grid-cols-3"><div class="rounded-2xl border border-slate-200 p-6 reveal" data-delay="0"><b>“É complicado?”</b><p class="mt-2 text-sm leading-6 text-slate-600">A proposta é organizar a gestão financeira sem exigir um ERP completo.</p></div><div class="rounded-2xl border border-slate-200 p-6 reveal" data-delay="100"><b>“E se eu não gostar?”</b><p class="mt-2 text-sm leading-6 text-slate-600">A oferta possui garantia de 7 dias, conforme as condições do checkout.</p></div><div class="rounded-2xl border border-slate-200 p-6 reveal" data-delay="200"><b>“Funciona sem internet?”</b><p class="mt-2 text-sm leading-6 text-slate-600">O sistema foi desenvolvido para operação local no Windows.</p></div></div></div></section>
+
+<section id="faq" class="border-y border-slate-200 bg-slate-50 py-16 lg:py-20"><div class="mx-auto max-w-3xl px-4 sm:px-6"><div class="text-center reveal"><span class="text-xs font-extrabold uppercase tracking-[.15em] text-emerald-600">Perguntas frequentes</span><h2 class="mt-2 text-3xl font-black sm:text-4xl">Ainda ficou alguma dúvida?</h2></div><div class="mt-9 space-y-3"><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="0"><summary class="cursor-pointer font-extrabold">O PROSPER tem mensalidade?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Não. A oferta apresentada é de R$197 em pagamento único, sem mensalidade do produto.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="60"><summary class="cursor-pointer font-extrabold">Em quais computadores funciona?</summary><p class="mt-3 text-sm leading-6 text-slate-600">O PROSPER é destinado a computadores e notebooks com Windows 10 ou Windows 11.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="120"><summary class="cursor-pointer font-extrabold">Meus dados ficam na nuvem?</summary><p class="mt-3 text-sm leading-6 text-slate-600">A aplicação trabalha localmente e utiliza SQLite para armazenamento dos dados.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="180"><summary class="cursor-pointer font-extrabold">Posso importar extratos bancários?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Sim. O sistema trabalha com arquivos OFX e CSV, conforme o formato disponibilizado pelo banco.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="240"><summary class="cursor-pointer font-extrabold">Como recebo o sistema?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Após a confirmação do pagamento, o acesso é disponibilizado pela área de membros da Kiwify, conforme as instruções da compra.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="300"><summary class="cursor-pointer font-extrabold">Existe garantia?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Sim. A oferta possui garantia de 7 dias, conforme as condições apresentadas no checkout.</p></details></div></div></section>
+
+<section class="bg-slate-950 py-16 text-white lg:py-24"><div class="mx-auto max-w-3xl px-4 text-center sm:px-6 reveal reveal-scale"><span class="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-400">Próximo passo</span><h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Pare de administrar sua empresa no escuro.</h2><p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">Organize seus números, enxergue o resultado e tome decisões melhores com uma visão financeira centralizada.</p><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-8 inline-flex rounded-full bg-emerald-500 px-8 py-4 text-base font-black text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600">Quero o PROSPER por R$197 →</a><p class="mt-4 text-xs text-slate-500">Pagamento único • Windows 10/11 • Garantia de 7 dias</p></div></section>
 </main>
 <footer class="border-t border-slate-100 bg-slate-50/50 py-8 text-center text-xs text-slate-400">
   <div class="mx-auto max-w-3xl px-4 space-y-2.5">
@@ -597,7 +699,48 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
     </p>
   </div>
 </footer>
-<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 hidden border-t border-slate-200 bg-white/95 p-3 shadow-2xl backdrop-blur"><div class="flex items-center gap-3"><div class="flex-1"><b class="font-mono text-lg">R$197</b><small class="block text-[10px] text-slate-500">Pagamento único</small></div><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="rounded-full bg-emerald-500 px-5 py-3 text-sm font-black text-white">Ver oferta</a></div></div>
+<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-2xl backdrop-blur"><div class="flex items-center gap-3"><div class="flex-1"><b class="font-mono text-lg">R$197</b><small class="block text-[10px] text-slate-500">Pagamento único</small></div><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="rounded-full bg-emerald-500 px-5 py-3 text-sm font-black text-white">Ver oferta</a></div></div>
+<script>
+// Mobile menu toggle
+(function() {
+  var btn = document.getElementById('mobile-menu-button');
+  var nav = document.getElementById('mobile-nav');
+  var iconOpen = document.getElementById('mobile-menu-open-icon');
+  var iconClose = document.getElementById('mobile-menu-close-icon');
+  if (!btn || !nav) return;
+
+  function closeMenu() {
+    nav.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Abrir menu');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }
+
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.contains('is-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      nav.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Fechar menu');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+  });
+
+  // Fechar ao clicar em qualquer link do menu mobile
+  nav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Fechar ao pressionar Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+</script>
 <script>document.querySelectorAll('[data-buy]').forEach(function(a){a.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'PROSPER Gestão Financeira',value:197,currency:'BRL'});if(typeof gtag==='function')gtag('event','begin_checkout',{value:197,currency:'BRL',items:[{item_name:'PROSPER Gestão Financeira',price:197,quantity:1}]});})});</script>
 
 <!-- Banner de consentimento -->
@@ -769,6 +912,71 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
       }
     });
   });
+})();
+
+// Scroll Progress & Dynamic Scroll Reveal
+(function() {
+  var progressBar = document.getElementById('scroll-progress');
+  var header = document.querySelector('header');
+  
+  function updateScrollProgress() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (progressBar && docHeight > 0) {
+      var progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }
+    if (header) {
+      if (scrollTop > 20) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    }
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateScrollProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+  updateScrollProgress();
+
+  // Scroll Reveal com IntersectionObserver
+  var revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.getAttribute('data-delay');
+          if (delay) {
+            el.style.transitionDelay = delay + 'ms';
+          }
+          el.classList.add('is-revealed');
+          obs.unobserve(el);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.1
+    });
+
+    revealElements.forEach(function(el) {
+      observer.observe(el);
+    });
+  } else {
+    // Fallback para navegadores antigos
+    revealElements.forEach(function(el) {
+      el.classList.add('is-revealed');
+    });
+  }
 })();
 </script>
 </body></html>
