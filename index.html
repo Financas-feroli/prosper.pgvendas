@@ -79,10 +79,10 @@ section[id]{scroll-margin-top:88px}
 .offer-shell{box-shadow:0 35px 90px -45px rgba(2,44,34,.34)}
 .offer-highlight{box-shadow:0 16px 36px -20px rgba(16,185,129,.35)}
 .faq-item{transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}.faq-item[open]{border-color:#a7f3d0;box-shadow:0 18px 40px -28px rgba(15,23,42,.22)}
-.mobile-cta{display:none;padding-bottom:calc(.75rem + env(safe-area-inset-bottom))}
+.mobile-cta{display:none;padding-top:.625rem;padding-bottom:calc(.625rem + env(safe-area-inset-bottom))}
 @media(max-width:767px){
   .mobile-cta{display:block}
-  body{padding-bottom:74px}
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
   .hero-shell{padding-top:2.75rem!important;padding-bottom:3.5rem!important}
   .hero-copy h1{font-size:2.25rem;line-height:1.08}
   .hero-copy p{font-size:1rem;line-height:1.65}
@@ -142,12 +142,11 @@ header,main,section,footer,nav,article,aside,div{max-width:100%}
   /* Keep the fixed purchase bar inside the viewport including safe-area devices. */
   .mobile-cta{left:0;right:0;width:100%;max-width:100%;padding-left:max(.75rem,env(safe-area-inset-left));padding-right:max(.75rem,env(safe-area-inset-right));}
   .mobile-cta>div{width:100%;max-width:100%;min-width:0}
-  .mobile-cta .flex-1{min-width:0}
-  .mobile-cta a{flex:0 0 auto;max-width:52%;}
+  .mobile-cta a{white-space:nowrap;flex-shrink:0;}
 
   /* Cookie banner: avoid width growth from long words/links. */
   #lgpd-banner{left:12px;right:12px;width:auto;max-width:calc(100% - 24px);}
-  #lgpd-banner .grid{width:100%;min-width:0}
+  #lgpd-banner .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%;min-width:0}
 
   footer .space-y-2\.5>*{max-width:100%}
   footer a{overflow-wrap:anywhere}
@@ -156,8 +155,8 @@ header,main,section,footer,nav,article,aside,div{max-width:100%}
 @media (max-width:359px){
   .header-shell>div:first-child{padding-left:12px!important;padding-right:12px!important}
   .hero-shell>div.relative{padding-left:12px!important;padding-right:12px!important}
-  .mobile-cta{padding-top:.625rem;padding-bottom:calc(.625rem + env(safe-area-inset-bottom));}
-  .mobile-cta a{padding-left:14px;padding-right:14px;font-size:.75rem;}
+  .mobile-cta{padding-top:.5rem;padding-bottom:calc(.5rem + env(safe-area-inset-bottom));}
+  .mobile-cta a{padding-left:10px;padding-right:10px;font-size:.7rem;}
   #lgpd-banner{left:8px;right:8px;max-width:calc(100% - 16px);padding:12px;}
   #lgpd-banner .grid{grid-template-columns:1fr!important}
 }
@@ -216,7 +215,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
 
 <main id="conteudo">
 <section class="hero-shell relative overflow-hidden bg-white"><div class="absolute inset-0 gridbg"></div><div class="absolute inset-0 glow"></div><div class="relative mx-auto grid max-w-6xl items-center gap-8 lg:gap-10 px-4 py-12 sm:px-6 lg:grid-cols-12 lg:py-20">
-<div class="lg:col-span-6"><div class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-wide text-emerald-700"><i class="h-2 w-2 rounded-full bg-emerald-500"></i> Gestão financeira empresarial</div><h1 class="text-3xl font-black leading-[1.15] tracking-[-.03em] sm:text-4xl lg:text-[40px] xl:text-[42px]">Sua empresa sabe <br class="hidden sm:inline"/><span class="grad">exatamente</span> para onde <br class="hidden sm:inline"/>está indo o&nbsp;dinheiro?</h1><p class="mt-5 text-base leading-7 text-slate-600 sm:text-lg">O <b class="text-slate-900">PROSPER</b> reúne receitas, despesas, centros de custos, fluxo de caixa e DRE em uma única visão para você <b class="text-slate-900">entender o resultado da sua empresa e&nbsp;decidir&nbsp;melhor.</b></p><div class="mt-7 flex items-center"><a href="#oferta" class="h-12 px-7 inline-flex items-center justify-center rounded-xl bg-slate-950 text-sm font-extrabold text-white shadow-xl shadow-slate-950/15 hover:bg-slate-800 transition-all active:scale-95 whitespace-nowrap">Quero ter controle financeiro →</a></div><div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-500"><span>✓ Windows 10/11</span><span>✓ Operação local</span><span>✓ Pagamento único</span><span>✓ 7 dias de garantia</span></div></div>
+<div class="hero-copy lg:col-span-6"><div class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-wide text-emerald-700"><i class="h-2 w-2 rounded-full bg-emerald-500"></i> Gestão financeira empresarial</div><h1 class="text-[1.75rem] sm:text-4xl lg:text-[40px] xl:text-[42px] font-black leading-[1.15] tracking-[-.03em]">Sua empresa sabe <br class="hidden sm:inline"/><span class="grad">exatamente</span> para onde <br class="hidden sm:inline"/>está indo o&nbsp;dinheiro?</h1><p class="mt-5 text-base leading-7 text-slate-600 sm:text-lg">O <b class="text-slate-900">PROSPER</b> reúne receitas, despesas, centros de custos, fluxo de caixa e DRE em uma única visão para você <b class="text-slate-900">entender o resultado da sua empresa e&nbsp;decidir&nbsp;melhor.</b></p><div class="mt-7 flex items-center"><a href="#oferta" class="h-12 px-7 inline-flex items-center justify-center rounded-xl bg-slate-950 text-sm font-extrabold text-white shadow-xl shadow-slate-950/15 hover:bg-slate-800 transition-all active:scale-95 whitespace-nowrap">Quero ter controle financeiro →</a></div><div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-500"><span>✓ Windows 10/11</span><span>✓ Operação local</span><span>✓ Pagamento único</span><span>✓ 7 dias de garantia</span></div></div>
 <div class="lg:col-span-6 relative w-full" id="product-carousel">
   <div class="absolute -inset-2 sm:-inset-4 rounded-3xl bg-emerald-500/15 blur-2xl -z-10"></div>
   
@@ -356,7 +355,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
     <!-- Trust Badges Strip -->
     <div class="mt-10 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-between gap-6 text-slate-400 text-xs reveal" data-delay="150">
       <span class="font-medium text-slate-500">Desenvolvido para empresários, diretores financeiros e gestores PME:</span>
-      <div class="flex items-center gap-6 font-semibold tracking-wider uppercase text-[11px] text-slate-400">
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 font-semibold tracking-wider uppercase text-[11px] text-slate-400">
         <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Indústrias</span>
         <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Comércios &amp; Varejo</span>
         <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Prestadores de Serviço</span>
@@ -585,7 +584,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
       <div class="grid lg:grid-cols-[1.15fr_.85fr]">
 
         <!-- LEFT: headline + features -->
-        <div class="flex flex-col justify-between p-8 sm:p-10 lg:p-12">
+        <div class="flex flex-col justify-between p-5 sm:p-10 lg:p-12">
 
           <!-- Kicker line -->
           <div>
@@ -622,8 +621,8 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
         </div>
 
         <!-- RIGHT: price card (light panel) -->
-        <div class="flex items-center p-6 sm:p-8 lg:p-10">
-          <div class="w-full rounded-2xl bg-[#f0f7f2] p-6 sm:p-7">
+        <div class="flex items-center p-3.5 sm:p-8 lg:p-10">
+          <div class="w-full rounded-2xl bg-[#f0f7f2] p-5 sm:p-7">
 
             <!-- Kicker -->
             <div class="flex items-center justify-between gap-2">
@@ -639,16 +638,16 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
               </div>
               <div class="mt-1 flex items-baseline gap-1">
                 <span class="text-2xl font-black text-slate-900">por R$</span>
-                <span class="font-mono text-5xl font-black tracking-tight text-slate-900 sm:text-[3.5rem]">97</span>
+                <span class="font-sans text-5xl font-black tracking-tight text-slate-900 sm:text-[3.5rem]">97</span>
               </div>
               <p class="mt-1.5 text-xs text-slate-500">Pagamento único vitalício. Sem mensalidade do produto.</p>
             </div>
 
             <!-- CTA button -->
             <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy
-               class="mt-6 flex w-full items-center justify-between rounded-2xl bg-emerald-500 px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600 active:scale-[.98]">
+               class="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-4 py-4 text-sm font-extrabold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600 active:scale-[.98] text-center">
               <span>Quero o PROSPER por R$ 97</span>
-              <span>→</span>
+              <span class="text-base font-bold">→</span>
             </a>
 
             <!-- Trust line -->
@@ -676,7 +675,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
 
 <section id="faq" class="border-y border-slate-200 bg-slate-50 py-16 lg:py-20"><div class="mx-auto max-w-3xl px-4 sm:px-6"><div class="text-center reveal"><span class="text-xs font-extrabold uppercase tracking-[.15em] text-emerald-600">Perguntas frequentes</span><h2 class="mt-2 text-3xl font-black sm:text-4xl">Ainda ficou alguma dúvida?</h2></div><div class="mt-9 space-y-3"><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="0"><summary class="cursor-pointer font-extrabold">O PROSPER tem mensalidade?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Não. A oferta especial está em promoção: de R$ 497 por apenas R$ 97 em pagamento único, sem nenhuma mensalidade do produto.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="60"><summary class="cursor-pointer font-extrabold">Em quais computadores funciona?</summary><p class="mt-3 text-sm leading-6 text-slate-600">O PROSPER é destinado a computadores e notebooks com Windows 10 ou Windows 11.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="120"><summary class="cursor-pointer font-extrabold">Meus dados ficam na nuvem?</summary><p class="mt-3 text-sm leading-6 text-slate-600">A aplicação trabalha localmente e utiliza SQLite para armazenamento dos dados.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="180"><summary class="cursor-pointer font-extrabold">Posso importar extratos bancários?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Sim. O sistema trabalha com arquivos OFX e CSV, conforme o formato disponibilizado pelo banco.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="240"><summary class="cursor-pointer font-extrabold">Como recebo o sistema?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Após a confirmação do pagamento, o acesso é disponibilizado pela área de membros da Kiwify, conforme as instruções da compra.</p></details><details class="faq-item rounded-2xl border border-slate-200 bg-white p-5 reveal" data-delay="300"><summary class="cursor-pointer font-extrabold">Existe garantia?</summary><p class="mt-3 text-sm leading-6 text-slate-600">Sim. A oferta possui garantia de 7 dias, conforme as condições apresentadas no checkout.</p></details></div></div></section>
 
-<section class="bg-slate-950 py-16 text-white lg:py-24"><div class="mx-auto max-w-3xl px-4 text-center sm:px-6 reveal reveal-scale"><span class="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-400">Próximo passo</span><h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Pare de administrar sua empresa no escuro.</h2><p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">Organize seus números, enxergue o resultado e tome decisões melhores com uma visão financeira centralizada.</p><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-8 inline-flex rounded-full bg-emerald-500 px-8 py-4 text-base font-black text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600">Quero o PROSPER por R$ 97 →</a><p class="mt-4 text-xs text-slate-400">De <span class="line-through text-slate-500">R$ 497</span> em promoção por apenas <strong class="text-emerald-400">R$ 97</strong> • Pagamento único • Windows 10/11 • Garantia de 7 dias</p></div></section>
+<section class="bg-slate-950 py-16 text-white lg:py-24"><div class="mx-auto max-w-3xl px-4 text-center sm:px-6 reveal reveal-scale"><span class="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-400">Próximo passo</span><h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Pare de administrar sua empresa no escuro.</h2><p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">Organize seus números, enxergue o resultado e tome decisões melhores com uma visão financeira centralizada.</p><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-8 inline-flex max-w-full items-center justify-center rounded-full bg-emerald-500 px-6 py-4 sm:px-8 text-sm sm:text-base font-black text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600 text-center">Quero o PROSPER por R$ 97 →</a><p class="mt-4 text-xs text-slate-400">De <span class="line-through text-slate-500">R$ 497</span> em promoção por apenas <strong class="text-emerald-400">R$ 97</strong> • Pagamento único • Windows 10/11 • Garantia de 7 dias</p></div></section>
 </main>
 <footer class="border-t border-slate-100 bg-slate-50/50 py-8 text-center text-xs text-slate-400">
   <div class="mx-auto max-w-3xl px-4 space-y-2.5">
@@ -709,7 +708,25 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
     </p>
   </div>
 </footer>
-<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-2xl backdrop-blur"><div class="flex items-center gap-3"><div class="flex-1 leading-none"><span class="text-[10px] text-slate-400 line-through">De R$ 497</span><b class="font-mono text-lg block text-slate-900 mt-0.5">R$ 97</b><small class="block text-[9px] text-emerald-600 font-bold uppercase tracking-wider">Em promoção</small></div><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="rounded-full bg-emerald-500 px-5 py-3 text-sm font-black text-white shadow-md shadow-emerald-500/20">Aproveitar por R$ 97</a></div></div>
+<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/90 bg-white/95 shadow-[0_-8px_25px_rgba(0,0,0,0.08)] backdrop-blur">
+  <div class="mx-auto flex max-w-lg items-center justify-between gap-3 px-3.5 py-2.5 sm:px-5 sm:py-3">
+    <div class="flex flex-col justify-center min-w-0 shrink-0">
+      <div class="flex items-center gap-1.5 leading-none">
+        <span class="text-[10px] sm:text-[11px] font-semibold text-slate-400 line-through">De R$ 497</span>
+        <span class="rounded bg-rose-50 px-1.5 py-0.5 text-[9px] font-extrabold uppercase text-rose-600 border border-rose-200">80% OFF</span>
+      </div>
+      <div class="mt-1 flex items-baseline gap-0.5 leading-none">
+        <span class="text-xs font-bold text-slate-700">R$</span>
+        <span class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-none font-sans">97</span>
+        <span class="text-[9px] sm:text-[10px] font-bold text-emerald-600 uppercase tracking-wide ml-1">vitalício</span>
+      </div>
+    </div>
+    <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-emerald-500 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-black text-white shadow-md shadow-emerald-500/20 transition active:scale-95 hover:bg-emerald-600 shrink-0">
+      <span>Aproveitar por R$ 97</span>
+      <span class="ml-1 text-sm font-bold">→</span>
+    </a>
+  </div>
+</div>
 <script>
 // Mobile menu toggle
 (function() {
@@ -773,6 +790,7 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
     var consent=localStorage.getItem('prosper_lgpd_consent');
     var banner=document.getElementById('lgpd-banner');
     if(consent==='accepted'){window.__loadProsperAnalytics();return;}
+    if(consent==='essential'){return;}
     if(!banner)return;
     setTimeout(function(){banner.classList.remove('hidden');},450);
     document.getElementById('lgpd-accept').addEventListener('click',function(){localStorage.setItem('prosper_lgpd_consent','accepted');banner.classList.add('hidden');window.__loadProsperAnalytics();});
