@@ -79,10 +79,10 @@ section[id]{scroll-margin-top:88px}
 .offer-shell{box-shadow:0 35px 90px -45px rgba(2,44,34,.34)}
 .offer-highlight{box-shadow:0 16px 36px -20px rgba(16,185,129,.35)}
 .faq-item{transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}.faq-item[open]{border-color:#a7f3d0;box-shadow:0 18px 40px -28px rgba(15,23,42,.22)}
-.mobile-cta{display:none;padding-top:.625rem;padding-bottom:calc(.625rem + env(safe-area-inset-bottom))}
+.mobile-cta{display:none}
 @media(max-width:767px){
-  .mobile-cta{display:block}
-  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .mobile-cta{display:block;padding-bottom:min(env(safe-area-inset-bottom,0px),16px)}
+  body{padding-bottom:calc(60px + min(env(safe-area-inset-bottom,0px),16px))}
   .hero-shell{padding-top:2.75rem!important;padding-bottom:3.5rem!important}
   .hero-copy h1{font-size:2.25rem;line-height:1.08}
   .hero-copy p{font-size:1rem;line-height:1.65}
@@ -139,8 +139,8 @@ header,main,section,footer,nav,article,aside,div{max-width:100%}
   [class*="grid-cols-2"]{grid-template-columns:minmax(0,1fr)!important}
   .faq-item,details{max-width:100%;min-width:0}
 
-  /* Keep the fixed purchase bar inside the viewport including safe-area devices. */
-  .mobile-cta{left:0;right:0;width:100%;max-width:100%;padding-left:max(.75rem,env(safe-area-inset-left));padding-right:max(.75rem,env(safe-area-inset-right));}
+  /* Keep the fixed purchase bar inside the viewport */
+  .mobile-cta{left:0;right:0;width:100%;max-width:100%;}
   .mobile-cta>div{width:100%;max-width:100%;min-width:0}
   .mobile-cta a{white-space:nowrap;flex-shrink:0;}
 
@@ -155,7 +155,6 @@ header,main,section,footer,nav,article,aside,div{max-width:100%}
 @media (max-width:359px){
   .header-shell>div:first-child{padding-left:12px!important;padding-right:12px!important}
   .hero-shell>div.relative{padding-left:12px!important;padding-right:12px!important}
-  .mobile-cta{padding-top:.5rem;padding-bottom:calc(.5rem + env(safe-area-inset-bottom));}
   .mobile-cta a{padding-left:10px;padding-right:10px;font-size:.7rem;}
   #lgpd-banner{left:8px;right:8px;max-width:calc(100% - 16px);padding:12px;}
   #lgpd-banner .grid{grid-template-columns:1fr!important}
@@ -708,20 +707,20 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
     </p>
   </div>
 </footer>
-<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/90 bg-white/95 shadow-[0_-8px_25px_rgba(0,0,0,0.08)] backdrop-blur">
-  <div class="mx-auto flex max-w-lg items-center justify-between gap-3 px-3.5 py-2.5 sm:px-5 sm:py-3">
-    <div class="flex flex-col justify-center min-w-0 shrink-0">
-      <div class="flex items-center gap-1.5 leading-none">
-        <span class="text-[10px] sm:text-[11px] font-semibold text-slate-400 line-through">De R$ 497</span>
-        <span class="rounded bg-rose-50 px-1.5 py-0.5 text-[9px] font-extrabold uppercase text-rose-600 border border-rose-200">80% OFF</span>
+<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/90 bg-white/95 shadow-[0_-4px_16px_rgba(0,0,0,0.06)] backdrop-blur">
+  <div class="mx-auto flex h-14 max-w-lg items-center justify-between gap-3 px-4">
+    <div class="flex flex-col justify-center min-w-0 shrink-0 leading-tight">
+      <div class="flex items-center gap-1.5">
+        <span class="text-[10px] font-semibold text-slate-400 line-through">De R$ 497</span>
+        <span class="rounded bg-rose-50 px-1 py-0.2 text-[8px] font-extrabold uppercase text-rose-600 border border-rose-200">80% OFF</span>
       </div>
-      <div class="mt-1 flex items-baseline gap-0.5 leading-none">
+      <div class="mt-0.5 flex items-baseline gap-1">
         <span class="text-xs font-bold text-slate-700">R$</span>
-        <span class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-none font-sans">97</span>
-        <span class="text-[9px] sm:text-[10px] font-bold text-emerald-600 uppercase tracking-wide ml-1">vitalício</span>
+        <span class="text-xl font-black text-slate-900 tracking-tight leading-none font-sans">97</span>
+        <span class="text-[9px] font-bold text-emerald-600 uppercase tracking-wide">vitalício</span>
       </div>
     </div>
-    <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-emerald-500 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-black text-white shadow-md shadow-emerald-500/20 transition active:scale-95 hover:bg-emerald-600 shrink-0">
+    <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-emerald-500 px-4 text-xs font-black text-white shadow-md shadow-emerald-500/20 transition active:scale-95 hover:bg-emerald-600 shrink-0">
       <span>Aproveitar por R$ 97</span>
       <span class="ml-1 text-sm font-bold">→</span>
     </a>
