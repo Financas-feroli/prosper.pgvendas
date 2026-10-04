@@ -12,5 +12,5 @@ window.PROSPER_DOWNLOAD = {
   directDriveUrl: "https://drive.usercontent.google.com/download?id=1qRQZGGp8hLabMjIi2ccP8HxukYNsKQMC&export=download&confirm=t",
   version: "2.4.0",
   sizeFormatted: "109.9 MB",
-  sha256: "68F0AC9B5275CB9A35DA543B060A592E37A2D19F3A3243F316D69A1D3D9B0769"
+  sha256: "77EFCE50A33D5E2102194B94A41F73BFCB83394061A8BA3816A70414BC196E70"
 };

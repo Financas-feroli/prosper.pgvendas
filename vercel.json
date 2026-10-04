@@ -5,7 +5,8 @@
     { "source": "/Obrigado", "destination": "/Obrigado/index.html" },
     { "source": "/download", "destination": "/download.html" },
     { "source": "/privacidade", "destination": "/privacidade.html" },
-    { "source": "/termos", "destination": "/termos.html" }
+    { "source": "/termos", "destination": "/termos.html" },
+    { "source": "/index3", "destination": "/index3.html" }
   ],
   "headers": [
     {

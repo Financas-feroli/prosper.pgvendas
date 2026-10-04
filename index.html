@@ -173,6 +173,11 @@ header,main,section,footer,nav,article,aside,div{max-width:100%}
 /* Prevent long words/tokens from creating a scrollable inline formatting box. */
 code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
 
+html.px-smooth{scroll-behavior:auto!important}
+
+#exit-modal{position:fixed;inset:0;z-index:90;display:none;place-items:center;padding:20px;background:rgba(8,13,26,.6);backdrop-filter:blur(4px)}
+#exit-modal.is-open{display:grid;animation:bizIn .3s ease}
+@keyframes bizIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PROSPER Gestão Financeira","applicationCategory":"FinanceApplication","operatingSystem":"Windows 10, Windows 11","description":"Software de gestão financeira empresarial para receitas, despesas, DRE, centros de custos e fluxo de caixa.","offers":{"@type":"Offer","price":"197.00","priceCurrency":"BRL","availability":"https://schema.org/InStock","url":"https://pay.kiwify.com.br/g1AjD9G"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O PROSPER tem mensalidade?","acceptedAnswer":{"@type":"Answer","text":"Não. O PROSPER é em pagamento único de R$ 197, sem nenhuma mensalidade do produto."}},{"@type":"Question","name":"Em quais computadores funciona?","acceptedAnswer":{"@type":"Answer","text":"O PROSPER é destinado a computadores e notebooks com Windows 10 ou Windows 11."}},{"@type":"Question","name":"Meus dados ficam na nuvem?","acceptedAnswer":{"@type":"Answer","text":"A aplicação trabalha localmente e utiliza SQLite para armazenamento dos dados."}},{"@type":"Question","name":"Posso importar OFX e CSV?","acceptedAnswer":{"@type":"Answer","text":"Sim. O sistema trabalha com arquivos OFX e CSV, conforme o formato disponibilizado pelo banco."}},{"@type":"Question","name":"Como recebo o produto?","acceptedAnswer":{"@type":"Answer","text":"Após a confirmação do pagamento, o acesso é disponibilizado pela área de membros da Kiwify, conforme as instruções da compra."}},{"@type":"Question","name":"Existe garantia?","acceptedAnswer":{"@type":"Answer","text":"A oferta possui garantia de 7 dias, conforme as condições apresentadas no checkout."}}]}</script>
@@ -669,50 +674,74 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
 
 <section class="bg-slate-950 py-16 text-white lg:py-24"><div class="mx-auto max-w-3xl px-4 text-center sm:px-6 reveal reveal-scale"><span class="text-xs font-extrabold uppercase tracking-[.18em] text-emerald-400">Próximo passo</span><h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Pare de administrar sua empresa no escuro.</h2><p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">Organize seus números, enxergue o resultado e tome decisões melhores com uma visão financeira centralizada.</p><a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-8 inline-flex max-w-full items-center justify-center rounded-full bg-emerald-500 px-6 py-4 sm:px-8 text-sm sm:text-base font-black text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-600 text-center">Quero o PROSPER por R$ 197 →</a><p class="mt-4 text-xs text-slate-400">Pagamento único de R$ 197 • Vitalício • Windows 10/11 • Garantia de 7 dias</p></div></section>
 </main>
-<footer class="border-t border-slate-100 bg-slate-50/50 py-8 text-center text-xs text-slate-400">
-  <div class="mx-auto max-w-3xl px-4 space-y-2.5">
-    <!-- Brand & Links -->
-    <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[12px]">
-      <div class="flex items-center gap-1.5 font-bold text-slate-700">
-        <img src="favicon.png" alt="PROSPER" class="h-4 w-4 object-contain opacity-85">
-        <span>PROSPER</span>
+<!-- FOOTER COMPLETO COM DADOS CORPORATIVOS -->
+<footer class="bg-white border-t border-slate-200/70">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8 pt-14 pb-10">
+    <div class="grid gap-10 md:grid-cols-12">
+
+      <div class="md:col-span-5 text-left">
+        <a href="#conteudo" class="inline-flex items-center gap-3" aria-label="PROSPER — início">
+          <img src="favicon.png" alt="" width="36" height="36" class="h-9 w-9 object-contain" onerror="this.outerHTML='<span class=&quot;grid h-9 w-9 place-items-center rounded-lg bg-emerald-600 text-white font-extrabold text-sm&quot;>P</span>'">
+          <span class="leading-none"><b class="block text-base font-black tracking-tight text-slate-900">PROSPER</b><span class="mt-1 block text-[11px] font-semibold text-slate-400">Gestão financeira para Windows</span></span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">DRE, fluxo de caixa e contas a pagar em um só lugar, com os dados no seu computador e pagamento único.</p>
+        <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-5 inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-emerald-700 active:scale-95">Quero o PROSPER por R$ 197</a>
       </div>
-      <span class="text-slate-300">·</span>
-      <a href="#recursos" class="text-slate-500 hover:text-emerald-600 transition">Recursos</a>
-      <a href="#oferta" class="text-slate-500 hover:text-emerald-600 transition">Oferta</a>
-      <a href="#faq" class="text-slate-500 hover:text-emerald-600 transition">Dúvidas</a>
-      <a href="/privacidade" class="text-slate-500 hover:text-emerald-600 transition">Privacidade</a>
-      <a href="/termos" class="text-slate-500 hover:text-emerald-600 transition">Termos</a>
+
+      <nav aria-label="Rodapé" class="md:col-span-3 md:col-start-7 text-left">
+        <h3 class="text-sm font-bold text-slate-900">Explore</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-slate-500">
+          <li><a href="#problema" class="transition hover:text-emerald-700">O problema</a></li>
+          <li><a href="#recursos" class="transition hover:text-emerald-700">Recursos</a></li>
+          <li><a href="#oferta" class="transition hover:text-emerald-700">Oferta</a></li>
+          <li><a href="#faq" class="transition hover:text-emerald-700">Dúvidas frequentes</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-3 text-left">
+        <h3 class="text-sm font-bold text-slate-900">Atendimento</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-slate-500">
+          <li><a href="https://api.whatsapp.com/send?phone=5591987545861" data-wa target="_blank" rel="noopener" class="transition hover:text-emerald-700">WhatsApp: (91) 98754-5861</a></li>
+          <li><a href="mailto:financas.feroli@gmail.com" class="break-all transition hover:text-emerald-700">financas.feroli@gmail.com</a></li>
+          <li>Belém, PA</li>
+          <li class="flex gap-4 pt-2"><a href="/privacidade" class="transition hover:text-emerald-700">Privacidade</a><a href="/termos" class="transition hover:text-emerald-700">Termos de uso</a></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Info & Suporte -->
-    <div class="text-[11px] text-slate-400 leading-relaxed">
-      <span>PROSPER Soluções Empresariais • Belém - PA</span>
-      <span class="mx-1.5 text-slate-300">·</span>
-      <span>Suporte: <a href="mailto:financas.feroli@gmail.com" class="text-slate-500 hover:text-emerald-600 transition">financas.feroli@gmail.com</a></span>
-      <span class="mx-1.5 text-slate-300">·</span>
-      <span>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5591987545861" target="_blank" rel="noopener" class="text-slate-500 hover:text-emerald-600 transition">(91) 98754-5861</a></span>
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-100 pt-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between text-left">
+      <p>© 2026 PROSPER Soluções Empresariais. Todos os direitos reservados.</p>
+      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 font-semibold text-slate-500">
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Pagamento seguro via Kiwify</li>
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Garantia de 7 dias</li>
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Windows 10 e 11</li>
+      </ul>
     </div>
-
-    <!-- Copyright & Kiwify -->
-    <p class="text-[10px] text-slate-400/80">
-      © 2026 PROSPER. Todos os direitos reservados • Pagamento seguro via Kiwify • Garantia incondicional de 7 dias
-    </p>
   </div>
 </footer>
-<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/90 bg-white/95 shadow-[0_-4px_16px_rgba(0,0,0,0.06)] backdrop-blur">
-  <div class="mx-auto flex h-14 max-w-lg items-center justify-between gap-3 px-4">
-    <div class="flex flex-col justify-center min-w-0 shrink-0 leading-tight">
-      <div class="flex items-baseline gap-1">
-        <span class="text-xs font-bold text-slate-700">R$</span>
-        <span class="text-xl font-black text-slate-900 tracking-tight leading-none font-sans">197</span>
-        <span class="text-[9px] font-bold text-emerald-600 uppercase tracking-wide">vitalício</span>
-      </div>
+<!-- BARRA FIXA DE COMPRA MOBILE -->
+<div class="mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/90 bg-white/95 backdrop-blur px-4 py-2.5 flex items-center justify-between md:hidden shadow-lg">
+  <div class="flex flex-col leading-tight">
+    <div class="flex items-baseline gap-1">
+      <span class="text-xs font-bold text-slate-700">R$</span>
+      <span class="text-lg font-black text-slate-900 font-sans">197</span>
+      <span class="text-[9px] font-bold text-emerald-600 uppercase tracking-wide">vitalício</span>
     </div>
-    <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-emerald-500 px-4 text-xs font-black text-white shadow-md shadow-emerald-500/20 transition active:scale-95 hover:bg-emerald-600 shrink-0">
-      <span>Quero por R$ 197</span>
-      <span class="ml-1 text-sm font-bold">→</span>
-    </a>
+  </div>
+  <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="rounded-full bg-emerald-600 px-5 py-2 text-xs font-bold text-white shadow-sm hover:bg-emerald-700 transition active:scale-95">
+    Adquirir Agora →
+  </a>
+</div>
+
+<!-- EXIT INTENT POP-UP -->
+<div id="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-title">
+  <div class="relative w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl">
+    <button type="button" id="exit-close" aria-label="Fechar" class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full text-slate-400 hover:bg-slate-100 transition">✕</button>
+    <img src="favicon.png" alt="PROSPER" width="48" height="48" class="mx-auto mb-4 h-12 w-12 object-contain drop-shadow-sm">
+    <h2 id="exit-title" class="text-2xl font-extrabold text-slate-950">Ficou alguma dúvida?</h2>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Você pode testar o PROSPER por 7 dias com garantia. Se preferir conversar antes, respondemos pelo WhatsApp.</p>
+    <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-6 flex items-center justify-center rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white hover:bg-emerald-700 transition active:scale-95 shadow-sm">Quero o PROSPER por R$ 197 →</a>
+    <a href="https://api.whatsapp.com/send?phone=5591987545861&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20PROSPER" data-wa target="_blank" rel="noopener" class="mt-3 flex items-center justify-center rounded-full border border-slate-200 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 transition active:scale-95">Falar no WhatsApp</a>
   </div>
 </div>
 <script>
@@ -993,6 +1022,90 @@ code,pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
       el.classList.add('is-revealed');
     });
   }
+})();
+</script>
+<script>
+/* ===== Rolagem suave com o mouse (desktop) =====
+   Aplica inércia à roda do mouse. Não atua em telas de toque nem com "reduzir movimento" ativo. */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||matchMedia('(pointer: coarse)').matches)return;
+  var root=document.documentElement,EASE=0.11;
+  root.classList.add('px-smooth');
+  var target=window.scrollY,cur=target,raf=null,last=0;
+  function max(){return Math.max(0,root.scrollHeight-innerHeight)}
+  function clamp(v){return Math.max(0,Math.min(max(),v))}
+  function step(now){
+    var dt=Math.min(64,now-(last||now));last=now;
+    var d=target-cur;
+    if(Math.abs(d)<0.5){cur=target;window.scrollTo(0,cur);raf=null;last=0;return}
+    cur+=d*(1-Math.pow(1-EASE,dt/16.667));
+    window.scrollTo(0,cur);
+    raf=requestAnimationFrame(step);
+  }
+  function go(){if(!raf){last=0;raf=requestAnimationFrame(step)}}
+  function inScrollable(el){
+    while(el&&el!==document.body&&el!==root){
+      var o=getComputedStyle(el).overflowY;
+      if((o==='auto'||o==='scroll')&&el.scrollHeight>el.clientHeight+1)return true;
+      el=el.parentElement;
+    }
+    return false;
+  }
+  addEventListener('wheel',function(e){
+    if(e.ctrlKey||e.defaultPrevented||Math.abs(e.deltaX)>Math.abs(e.deltaY))return;
+    var m=document.getElementById('exit-modal');if(m&&m.classList.contains('is-open'))return;
+    if(inScrollable(e.target))return;
+    if(max()<=0)return;
+    e.preventDefault();
+    var dy=e.deltaMode===1?e.deltaY*34:e.deltaMode===2?e.deltaY*innerHeight:e.deltaY;
+    if(!raf){cur=target=window.scrollY}
+    target=clamp(target+dy);go();
+  },{passive:false});
+  /* barra de rolagem, teclado e outros métodos: sincroniza quando a animação não está ativa */
+  addEventListener('scroll',function(){if(!raf){cur=target=window.scrollY}},{passive:true});
+  addEventListener('resize',function(){target=clamp(target);cur=clamp(cur)});
+  /* links internos (#secao) passam pelo mesmo motor suave */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;
+    var id=a.getAttribute('href').slice(1);if(!id)return;
+    var el=document.getElementById(id);if(!el)return;
+    e.preventDefault();
+    if(!raf){cur=target=window.scrollY}
+    target=clamp(el.getBoundingClientRect().top+window.scrollY-80);go();
+    try{history.replaceState(null,'','#'+id)}catch(x){}
+  });
+})();
+</script>
+<script>
+// Exit Intent Pop-up (desktop, 1x por sessão)
+(function(){
+  var modal = document.getElementById('exit-modal');
+  var closeBtn = document.getElementById('exit-close');
+  if (!modal || !closeBtn) return;
+
+  function closeM() {
+    modal.classList.remove('is-open');
+  }
+
+  document.addEventListener('mouseout', function(e) {
+    try {
+      if (!e.relatedTarget && e.clientY <= 0 && window.scrollY > 600 && !sessionStorage.getItem('px_exit')) {
+        sessionStorage.setItem('px_exit', '1');
+        modal.classList.add('is-open');
+        closeBtn.focus();
+        if (typeof gtag === 'function') gtag('event', 'exit_intent');
+        if (typeof fbq === 'function') fbq('trackCustom', 'ExitIntent');
+      }
+    } catch(x) {}
+  });
+
+  closeBtn.addEventListener('click', closeM);
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeM();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeM();
+  });
 })();
 </script>
 </body></html>

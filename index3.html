@@ -1,0 +1,1299 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PROSPER | Gestão Financeira Empresarial para Windows</title>
+<!-- PROSPER landing page v3.0 (Em Standby / Atualização Futura) -->
+<meta name="description" content="Software de gestão financeira para Windows: DRE automática, contas a pagar e fluxo de caixa. Sem mensalidades, 100% offline e seguro por R$ 197 vitalício.">
+<!-- Em standby: noindex, nofollow para não conflitar com a página principal em produção -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="PROSPER Soluções Empresariais">
+<link rel="canonical" href="https://prospergestao.com.br/index3">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://prospergestao.com.br/index3">
+<meta property="og:site_name" content="PROSPER">
+<meta property="og:title" content="PROSPER | Gestão Financeira Empresarial para Windows">
+<meta property="og:description" content="Software de gestão financeira 100% offline: DRE automática, contas a pagar e fluxo de caixa. Pagamento único por R$ 197 vitalício.">
+<meta property="og:image" content="https://prospergestao.com.br/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PROSPER | Gestão Financeira Empresarial para Windows">
+<meta name="twitter:description" content="Software de gestão financeira 100% offline para Windows. Sem mensalidades, pagamento único de R$ 197.">
+<meta name="twitter:image" content="https://prospergestao.com.br/og-cover.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<meta name="theme-color" content="#ffffff">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace']
+        },
+        colors: {
+          brand: {
+            green: '#10b981',
+            dark: '#080d1a',
+            accent: '#059669'
+          }
+        },
+        boxShadow: {
+          'savium': '0 20px 45px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.04)',
+          'savium-hover': '0 30px 60px -20px rgba(0, 0, 0, 0.08), 0 0 1px 1px rgba(0, 0, 0, 0.06)',
+          'device': '0 40px 100px -20px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.07)'
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- Métricas e publicidade -->
+<script>
+(function(){
+  window.__prosperAnalyticsLoaded=false;
+  window.__loadProsperAnalytics=function(){
+    if(window.__prosperAnalyticsLoaded)return;
+    window.__prosperAnalyticsLoaded=true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1403342131749075');fbq('track','PageView');
+    window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','AW-18439673827');
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=AW-18439673827';document.head.appendChild(s);
+  };
+})();
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background-color:#fafafc;color:#0f172a;overflow-x:hidden}
+  
+  /* Gradientes de fundo inspirados no vídeo Savium */
+  .savium-hero-glow{background:radial-gradient(ellipse 80% 55% at 50% 10%, rgba(209, 250, 229, 0.55) 0%, rgba(236, 253, 245, 0.45) 45%, transparent 75%)}
+  .savium-banner-glow{background:linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 45%, #d1fae5 100%)}
+  .gridbg{background-image:linear-gradient(rgba(16,185,129,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(16,185,129,.05) 1px,transparent 1px);background-size:42px 42px}
+
+  /* Animações e Cards */
+  @keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .floating-anim-slow{animation:floatSlow 6s ease-in-out infinite}
+  .floating-anim-delayed{animation:floatSlow 7s ease-in-out 2s infinite}
+  
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
+  .reveal.is-revealed{opacity:1!important;transform:translate(0,0)!important}
+  
+  #scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#34d399,#059669);z-index:999;width:0%;transition:width .1s linear}
+  .skip-link{position:fixed;left:12px;top:-80px;z-index:100;padding:10px 14px;border-radius:10px;background:#0f172a;color:#fff;font-size:13px;font-weight:800;transition:top .2s ease}.skip-link:focus{top:12px}
+  .mobile-nav-panel{max-height:0;overflow:hidden;opacity:0;transition:max-height .25s ease,opacity .2s ease}.mobile-nav-panel.is-open{max-height:360px;opacity:1}
+  details > summary{list-style:none}
+  details > summary::-webkit-details-marker{display:none}
+
+  /* ===== v2.1 ===== */
+  h1,h2,h3,.font-display{font-family:'Sora','Inter',system-ui,sans-serif}
+  .tnum{font-variant-numeric:tabular-nums}
+  :focus-visible{outline:2px solid #10b981;outline-offset:3px;border-radius:8px}
+  a[data-buy]{position:relative;overflow:hidden}
+  a[data-buy]::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-120%);animation:shine 5s ease-in-out 2s infinite}
+  @keyframes shine{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+  .px-play{position:absolute;inset:0;z-index:15;display:grid;place-content:center;justify-items:center;gap:12px;background:linear-gradient(180deg,rgba(8,13,26,.15),rgba(8,13,26,.65));color:#fff;cursor:pointer;border:0}
+  .px-play span{display:grid;place-items:center;width:72px;height:72px;border-radius:999px;background:#fff;color:#059669;font-size:26px;padding-left:5px;box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:pulseRing 2.4s infinite}
+  .px-play em{font-style:normal;font-weight:700;font-size:13px}
+  @keyframes pulseRing{70%{box-shadow:0 0 0 22px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+  input[type=range]{accent-color:#059669;width:100%;height:28px;cursor:pointer}
+  .biz-tab{border:1px solid #e2e8f0;background:#fff;color:#475569;font-weight:700;font-size:12px;padding:9px 16px;border-radius:999px;transition:all .2s}
+  .biz-tab:hover{border-color:#6ee7b7}
+  .biz-tab[aria-selected=true]{background:#0f172a;border-color:#0f172a;color:#fff}
+  .biz-panel{animation:bizIn .35s ease}
+  @keyframes bizIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  #exit-modal{position:fixed;inset:0;z-index:90;display:none;place-items:center;padding:20px;background:rgba(8,13,26,.6);backdrop-filter:blur(4px)}
+  #exit-modal.is-open{display:grid;animation:bizIn .3s ease}
+  .wa-float{position:fixed;right:16px;bottom:84px;z-index:60;display:flex;align-items:center;gap:8px;background:#25d366;color:#fff;font-weight:800;font-size:12px;padding:12px 14px;border-radius:999px;box-shadow:0 10px 30px -8px rgba(37,211,102,.6);transition:transform .2s}
+  .wa-float:hover{transform:translateY(-2px)}
+  @media(min-width:768px){.wa-float{bottom:24px;right:24px}}
+  #lgpd-banner{bottom:150px}@media(min-width:768px){#lgpd-banner{bottom:16px}}
+  .step-line{background:linear-gradient(90deg,#a7f3d0,#10b981,#a7f3d0)}
+  nav a.is-active{color:#059669}
+
+  /* ===== v2.2 · modo vídeo primeiro ===== */
+  body.gate-locked #gated,body.gate-locked .gate-hide{display:none!important}
+  body.gate-locked{padding-bottom:0}
+  main>section:first-child{padding-top:2.5rem}
+  #product-carousel{margin-top:2rem}
+  main>section:first-child h1{font-size:clamp(1.9rem,4.6vw,3.4rem)}
+  #gate-bar{margin:22px auto 0;max-width:420px}
+  #gate-bar .trk{height:5px;border-radius:99px;background:#e2e8f0;overflow:hidden}
+  #gate-bar .fil{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#10b981,#10b981);transition:width .25s linear}
+  .gate-open #gate-bar{display:none}
+  #gate-next{display:none;margin:22px auto 0;align-items:center;gap:8px;border-radius:99px;background:transparent;color:#64748b;border:1px solid #e2e8f0;font-weight:600;font-size:12px;padding:8px 16px;animation:bizIn .8s ease}
+  #gate-next:hover{color:#0f172a;border-color:#cbd5e1}
+  .gate-open #gate-next{display:inline-flex}
+  .gate-unlocking #gated,.gate-unlocking .gate-below{animation:gateIn 1.4s ease both}
+  @keyframes gateIn{from{opacity:0}to{opacity:1}}
+  .px-sound{position:absolute;right:12px;top:12px;z-index:25;display:none;align-items:center;gap:6px;border:0;border-radius:99px;background:rgba(8,13,26,.75);color:#fff;font-size:12px;font-weight:700;padding:8px 14px;backdrop-filter:blur(6px);cursor:pointer;animation:bizIn .4s ease}
+
+  html.px-smooth{scroll-behavior:auto!important}
+  section[id]{scroll-margin-top:72px}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PROSPER Gestão Financeira","applicationCategory":"FinanceApplication","operatingSystem":"Windows 10, Windows 11","description":"Software de gestão financeira empresarial para receitas, despesas, DRE, centros de custos e fluxo de caixa.","offers":{"@type":"Offer","price":"197.00","priceCurrency":"BRL","availability":"https://schema.org/InStock","url":"https://pay.kiwify.com.br/g1AjD9G"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O PROSPER tem mensalidade?","acceptedAnswer":{"@type":"Answer","text":"Não. O PROSPER é em pagamento único de R$ 197, sem nenhuma mensalidade do produto."}},{"@type":"Question","name":"Em quais computadores funciona?","acceptedAnswer":{"@type":"Answer","text":"O PROSPER é destinado a computadores e notebooks com Windows 10 ou Windows 11."}},{"@type":"Question","name":"Meus dados ficam na nuvem?","acceptedAnswer":{"@type":"Answer","text":"A aplicação trabalha localmente e utiliza SQLite para armazenamento dos dados."}},{"@type":"Question","name":"Posso importar OFX e CSV?","acceptedAnswer":{"@type":"Answer","text":"Sim. O sistema trabalha com arquivos OFX e CSV, conforme o formato disponibilizado pelo banco."}},{"@type":"Question","name":"Como recebo o produto?","acceptedAnswer":{"@type":"Answer","text":"Após a confirmação do pagamento, o acesso é disponibilizado pela área de membros da Kiwify, conforme as instruções da compra."}},{"@type":"Question","name":"Existe garantia?","acceptedAnswer":{"@type":"Answer","text":"A oferta possui garantia de 7 dias, conforme as condições apresentadas no checkout."}}]}</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body class="selection:bg-emerald-600 selection:text-white pb-16 md:pb-0">
+
+<!-- ==========================================================================
+     CONFIGURAÇÃO DO VÍDEO & MODO STANDBY
+     --------------------------------------------------------------------------
+     Para ativar o vídeo no carrossel quando estiver pronto, preencha UM dos campos:
+     - mp4: 'videos/nome_do_video.mp4' (arquivo local na pasta 'videos/')
+     - webm: 'videos/nome_do_video.webm'
+     - embed: 'https://www.youtube.com/embed/XXXXX' (ou URL do Vimeo)
+
+     Configuração do bloqueio de conteúdo (gateMode):
+     - 'auto': Só ativa o bloqueio com contagem de 60s quando houver vídeo configurado.
+               Enquanto estiver vazio (standby), a página fica totalmente aberta para revisão.
+     - true:   Força o bloqueio de 60s mesmo sem vídeo (para testes do contador).
+     - false:  Mantém a página sempre desbloqueada.
+     ========================================================================== -->
+<script>
+window.PROSPER_VIDEO = {
+  mp4: '',
+  webm: '',
+  embed: '',
+  autoplay: true,
+  poster: 'screenshots/screen-1-dashboard.png',
+  gateMode: 'auto'
+};
+
+(function(){
+  try {
+    var v = window.PROSPER_VIDEO || {};
+    var hasVideo = Boolean(v.mp4 || v.webm || v.embed);
+    var shouldLock = (v.gateMode === true) || (v.gateMode === 'auto' && hasVideo);
+    if (shouldLock && !sessionStorage.getItem("px_unlocked")) {
+      document.body.classList.add("gate-locked");
+    } else {
+      document.body.classList.add("gate-open");
+    }
+  } catch(e) {
+    document.body.classList.add("gate-open");
+  }
+})();
+</script>
+<noscript><style>body.gate-locked #gated,body.gate-locked .gate-hide{display:block!important}</style></noscript>
+
+<div id="scroll-progress"></div>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- HEADER / NAVEGAÇÃO MINIMALISTA -->
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/85 border-b border-emerald-100/70 transition-all">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+    <a href="#conteudo" aria-label="PROSPER — início" class="flex items-center gap-3 group">
+      <img src="favicon.png" alt="PROSPER" width="34" height="34" class="h-8 w-8 object-contain" onerror="this.outerHTML='<span class=&quot;grid h-8 w-8 place-items-center rounded-lg bg-emerald-600 text-white font-display font-extrabold text-sm&quot;>P</span>'">
+      <div class="leading-none">
+        <b class="text-sm tracking-tight text-slate-900 block font-black">PROSPER</b>
+        <span class="text-[9px] font-bold uppercase tracking-[.18em] text-slate-400">Gestão Financeira</span>
+      </div>
+    </a>
+
+    <nav aria-label="Navegação principal" class="gate-hide hidden md:flex items-center gap-8 text-[13px] font-semibold text-slate-600">
+      <a href="#problema" class="hover:text-slate-950 transition">O problema</a>
+      <a href="#recursos" class="hover:text-slate-950 transition">Recursos</a>
+      <a href="#negocios" class="hover:text-slate-950 transition">Para quem é</a>
+      <a href="#diferenciais" class="hover:text-slate-950 transition">Diferenciais</a>
+      <a href="#calculadora" class="hover:text-slate-950 transition">Calculadora</a>
+      <a href="#oferta" class="hover:text-slate-950 transition">Oferta</a>
+      <a href="#faq" class="hover:text-slate-950 transition">Dúvidas</a>
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="gate-hide inline-flex items-center justify-center px-4 sm:px-5 py-2 text-xs font-bold text-white bg-emerald-600 rounded-full hover:bg-emerald-700 transition active:scale-95 shadow-sm">
+        Quero o PROSPER
+      </a>
+      <button id="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menu" class="gate-hide inline-grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-700 md:hidden">
+        <svg id="mobile-menu-open-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="mobile-menu-close-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-nav" class="gate-hide mobile-nav-panel border-t border-slate-100 bg-white md:hidden">
+    <nav aria-label="Navegação mobile" class="mx-auto grid max-w-6xl gap-1 px-5 py-3">
+      <a href="#problema" class="rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50">O problema</a>
+      <a href="#recursos" class="rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50">Recursos</a>
+      <a href="#negocios" class="rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50">Para quem é</a>
+      <a href="#calculadora" class="rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50">Calculadora de economia</a>
+      <a href="#diferenciais" class="rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50">Diferenciais</a>
+      <a href="#oferta" class="rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50">Oferta</a>
+      <a href="#faq" class="rounded-xl px-3 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50">Dúvidas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo" class="relative overflow-hidden">
+
+  <!-- HERO SECTION COM MOCKUP SAVIUM E WIDGETS FLUTUANTES -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 savium-hero-glow">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center">
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-xs mb-7 reveal">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-slate-700">Sem mensalidade • Modo Local Seguro Windows</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-[68px] font-black text-slate-950 tracking-[-0.04em] leading-[1.08] max-w-4xl mx-auto reveal" data-delay="100">
+        Saiba se sua empresa <br class="hidden sm:inline"/>
+        realmente dá lucro.
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed reveal" data-delay="200">
+        Saldo no banco não é lucro. O <b class="text-slate-900">PROSPER</b> reúne receitas, despesas, centros de custos, fluxo de caixa e DRE em uma única visão para você entender o resultado real da sua empresa e decidir melhor.
+      </p>
+
+      <!-- MOCKUP COM TELAS REAIS E WIDGETS FLUTUANTES -->
+      <div class="mt-14 sm:mt-18 relative max-w-5xl mx-auto reveal" data-delay="400" id="product-carousel">
+        
+        <!-- Widget Flutuante 1: Liquidez Imediata -->
+        <div class="absolute -top-5 -left-3 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-savium border border-slate-200/80 hidden md:flex items-center gap-3 z-30 floating-anim-slow">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold">
+            ↑
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Liquidez Imediata</p>
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-lg font-extrabold text-slate-900 tnum" data-count="2.45" data-fmt="x">2,45x</span>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">Confortável</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget Flutuante 2: Disponível em Caixa -->
+        <div class="absolute top-8 -right-3 sm:-right-6 bg-slate-900/95 backdrop-blur-md text-white rounded-2xl py-2.5 px-4 shadow-xl border border-slate-700/80 hidden md:flex items-center gap-3 z-30">
+          <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+          <div class="text-left">
+            <div class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Disponível em Caixa</div>
+            <div class="text-xs sm:text-sm font-bold text-emerald-400 font-mono tnum" data-count="289400" data-fmt="brl2">R$ 289.400,00</div>
+          </div>
+        </div>
+
+        <!-- Widget Flutuante 3: Atenção Contas a Pagar -->
+        <div class="absolute -bottom-5 -right-3 sm:-right-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-savium border border-amber-200/80 hidden md:flex items-center gap-3 z-30 floating-anim-delayed">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 font-bold">
+            !
+          </div>
+          <div class="text-left">
+            <p class="text-xs font-bold text-slate-900 leading-snug">Atenção ao Contas a Pagar</p>
+            <p class="text-[11px] text-slate-500">R$ 96.020,20 conciliados em aberto</p>
+          </div>
+        </div>
+
+        <!-- Moldura de Janela Desktop Estilo Savium -->
+        <div class="relative rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-white border border-slate-200/90 shadow-device backdrop-blur-xl group overflow-hidden">
+          <div class="h-9 bg-slate-50 rounded-t-xl px-3 flex items-center justify-between border-b border-slate-200/70 mb-2">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+              <span class="ml-2 text-[10px] text-slate-400 font-mono font-medium">PROSPER Desktop v4.2 • Modo Local Seguro</span>
+            </div>
+            <div class="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full font-bold">100% OFFLINE</div>
+          </div>
+
+          <div class="relative w-full overflow-hidden rounded-xl bg-slate-900" style="aspect-ratio: 1024/525;">
+            <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-100 scale-100 z-10" data-index="0">
+              <img src="screenshots/screen-1-dashboard.png" alt="Tela do Dashboard Executivo do PROSPER" class="w-full h-full object-cover" fetchpriority="high">
+            </div>
+            <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="1">
+              <img src="screenshots/screen-2-dre.png" alt="Tela de Demonstrativo de Resultados DRE no PROSPER" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="2">
+              <img src="screenshots/screen-3-lancamentos.png" alt="Tela de Lançamentos e Conciliação no PROSPER" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="3">
+              <img src="screenshots/screen-4-centros-custo.png" alt="Tela de Categorias e Centros de Custo no PROSPER" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="carousel-slide absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none z-0" data-index="4">
+              <img src="screenshots/screen-5-previsto-realizado.png" alt="Tela de Previsto vs Realizado no PROSPER" class="w-full h-full object-cover" loading="lazy">
+            </div>
+
+            <button id="carouselPrev" aria-label="Tela anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur-md transition z-20">
+              ‹
+            </button>
+            <button id="carouselNext" aria-label="Próxima tela" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur-md transition z-20">
+              ›
+            </button>
+
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/60 backdrop-blur-md" id="carouselDots">
+              <button type="button" aria-label="Ir para tela 1" class="carousel-dot h-1 w-6 bg-white rounded-full transition-all" data-target="0"></button>
+              <button type="button" aria-label="Ir para tela 2" class="carousel-dot h-1 w-2 bg-white/40 rounded-full transition-all" data-target="1"></button>
+              <button type="button" aria-label="Ir para tela 3" class="carousel-dot h-1 w-2 bg-white/40 rounded-full transition-all" data-target="2"></button>
+              <button type="button" aria-label="Ir para tela 4" class="carousel-dot h-1 w-2 bg-white/40 rounded-full transition-all" data-target="3"></button>
+              <button type="button" aria-label="Ir para tela 5" class="carousel-dot h-1 w-2 bg-white/40 rounded-full transition-all" data-target="4"></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Barra de liberação do conteúdo (Modo Vídeo Primeiro) -->
+      <div id="gate-bar" class="gate-only" role="status" aria-live="polite">
+        <p class="text-xs font-semibold text-slate-600"><span id="gate-msg">Assista à demonstração. O restante da página abre em <b id="gate-t" class="tnum text-slate-900">1:00</b></span></p>
+        <div class="trk mt-2"><div class="fil" id="gate-fil"></div></div>
+      </div>
+      <button type="button" id="gate-next">Mais informações abaixo ↓</button>
+
+      <div class="gate-hide gate-below mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto reveal" data-delay="300">
+        <div class="flex w-full items-center p-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+          <input type="text" placeholder="Windows 10 ou 11" disabled class="bg-transparent px-4 text-xs text-slate-400 font-medium w-full outline-hidden cursor-default select-none">
+          <a href="#oferta" class="px-5 py-2.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white text-xs font-bold whitespace-nowrap transition active:scale-95 shadow-sm">
+            Quero ter controle →
+          </a>
+        </div>
+      </div>
+      <div class="gate-hide mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-500 reveal" data-delay="350">
+        <span><b class="text-emerald-600">✓</b> Windows 10/11</span>
+        <span><b class="text-emerald-600">✓</b> Operação local</span>
+        <span><b class="text-emerald-600">✓</b> Pagamento único</span>
+        <span><b class="text-emerald-600">✓</b> 7 dias de garantia</span>
+      </div>
+      <p class="gate-hide mt-3 text-xs text-slate-500 reveal" data-delay="380">Quer ver antes de decidir? <a href="#calculadora" class="font-bold text-emerald-600 underline underline-offset-2">Calcule quanto você economiza</a> ou <a href="https://api.whatsapp.com/send?phone=5591987545861&text=Ol%C3%A1!%20Quero%20conhecer%20o%20PROSPER" data-wa class="font-bold text-emerald-600 underline underline-offset-2" target="_blank" rel="noopener">fale com a gente no WhatsApp</a>.</p>
+    </div>
+  </section>
+
+  <div id="gated">
+  <!-- METRIC AND VALUE RIBBON -->
+  <section class="bg-white border-y border-slate-200/60 relative z-10 py-12" data-purpose="value-metrics-ribbon">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+        <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="0">
+          <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">100%</div>
+          <div class="text-xs font-bold text-slate-900 mt-1 uppercase tracking-wider">Privacidade Local</div>
+          <p class="text-xs text-slate-500 mt-1">Seus dados financeiros não ficam salvos em nuvens de terceiros.</p>
+        </div>
+        <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="100">
+          <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Zero</div>
+          <div class="text-xs font-bold text-slate-900 mt-1 uppercase tracking-wider">Mensalidades ou Taxas</div>
+          <p class="text-xs text-slate-500 mt-1">Licença vitalícia em pagamento único com atualizações inclusas.</p>
+        </div>
+        <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="200">
+          <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">&lt; 15 min</div>
+          <div class="text-xs font-bold text-slate-900 mt-1 uppercase tracking-wider">Fechamento Diário</div>
+          <p class="text-xs text-slate-500 mt-1">Conciliação bancária veloz através de extratos OFX e categorias.</p>
+        </div>
+        <div class="flex flex-col items-center md:items-start text-center md:text-left md:px-6 pt-4 md:pt-0 reveal" data-delay="300">
+          <div class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">DRE Real</div>
+          <div class="text-xs font-bold text-slate-900 mt-1 uppercase tracking-wider">Competência e Caixa</div>
+          <p class="text-xs text-slate-500 mt-1">Visão contábil e gerencial sem depender de planilhas quebradas.</p>
+        </div>
+      </div>
+      <div class="mt-10 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-between gap-6 text-slate-400 text-xs reveal" data-delay="150">
+        <span class="font-medium text-slate-500">Desenvolvido para empresários, diretores financeiros e gestores PME:</span>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 font-semibold tracking-wider uppercase text-[11px] text-slate-400">
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Indústrias</span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Comércios &amp; Varejo</span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Prestadores de Serviço</span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>Holdings &amp; Franquias</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO O PROBLEMA (CARDS DE DIAGNÓSTICO ESTILO SAVIUM) -->
+  <section id="problema" class="py-20 md:py-24 bg-[#fafafc] border-b border-slate-200/60">
+    <div class="mx-auto max-w-6xl px-5 sm:px-6">
+      <div class="max-w-2xl reveal">
+        <span class="text-xs font-bold uppercase tracking-[.15em] text-slate-400">Diagnóstico Financeiro</span>
+        <h2 class="mt-2 text-3xl font-black tracking-tight sm:text-4xl text-slate-950">O problema não é a falta de vendas. É a falta de clareza.</h2>
+        <p class="mt-3 leading-relaxed text-slate-600 text-sm sm:text-base">Quando os números ficam espalhados em planilhas, extratos e anotações soltas, a gestão vira pura tentativa e erro.</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <!-- Card 01 -->
+        <article class="bg-white border border-slate-200/80 rounded-3xl p-7 shadow-savium hover:shadow-savium-hover transition flex flex-col justify-between reveal" data-delay="0">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-sm font-bold text-slate-400">01</span>
+              <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-700 font-bold text-xs">
+                $
+              </div>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-slate-950 tracking-tight">Saldo não é lucro</h3>
+            <p class="mt-2 text-xs sm:text-sm leading-relaxed text-slate-500">Dinheiro disponível na conta corrente não mostra sozinho se a operação está sendo rentável.</p>
+          </div>
+          <div class="mt-6 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-slate-600">Saldo em Banco</span>
+              <span class="font-bold font-mono text-slate-900">R$ 45.200</span>
+            </div>
+            <div class="my-2.5 h-px bg-slate-200"></div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-rose-600">Lucro Real Apurado</span>
+              <span class="font-bold font-mono text-rose-600">- R$ 3.840</span>
+            </div>
+            <p class="mt-2 text-[10px] text-slate-400">O saldo esconde obrigações futuras não provisionadas.</p>
+          </div>
+        </article>
+
+        <!-- Card 02 -->
+        <article class="bg-white border border-slate-200/80 rounded-3xl p-7 shadow-savium hover:shadow-savium-hover transition flex flex-col justify-between reveal" data-delay="150">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-sm font-bold text-slate-400">02</span>
+              <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-700 font-bold text-xs">
+                %
+              </div>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-slate-950 tracking-tight">Despesas sem visão</h3>
+            <p class="mt-2 text-xs sm:text-sm leading-relaxed text-slate-500">Sem categorias e centros de custos, fica difícil descobrir onde o dinheiro está sendo consumido.</p>
+          </div>
+          <div class="mt-6 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-slate-600">Categorização Mensal</span>
+              <span class="rounded bg-amber-100 text-amber-800 px-1.5 py-0.5 text-[10px] font-bold">62% "Outros"</span>
+            </div>
+            <div class="mt-2.5 flex h-2 w-full overflow-hidden rounded-full bg-slate-200">
+              <div class="h-full bg-slate-900" style="width: 22%"></div>
+              <div class="h-full bg-slate-400" style="width: 16%"></div>
+              <div class="h-full bg-amber-400" style="width: 62%"></div>
+            </div>
+            <p class="mt-2 text-[10px] text-slate-400">Pequenos custos somados causam sangrias silenciosas.</p>
+          </div>
+        </article>
+
+        <!-- Card 03 -->
+        <article class="bg-white border border-slate-200/80 rounded-3xl p-7 shadow-savium hover:shadow-savium-hover transition flex flex-col justify-between reveal" data-delay="300">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-sm font-bold text-slate-400">03</span>
+              <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-700 font-bold text-xs">
+                ⧗
+              </div>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-slate-950 tracking-tight">O futuro surpreende</h3>
+            <p class="mt-2 text-xs sm:text-sm leading-relaxed text-slate-500">Compromissos e recebimentos precisam ser vistos antes de pressionarem o fluxo de caixa.</p>
+          </div>
+          <div class="mt-6 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-slate-600">D+15 Dias (Projeção)</span>
+              <span class="text-[10px] font-bold text-rose-600">Gargalo Crítico</span>
+            </div>
+            <div class="mt-2 space-y-1 text-[11px]">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">A Pagar (Impostos/Contas)</span>
+                <span class="font-bold font-mono text-slate-900">R$ 28.000</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">A Receber Confirmado</span>
+                <span class="font-bold font-mono text-slate-900">R$ 11.500</span>
+              </div>
+            </div>
+            <p class="mt-2 text-[10px] text-rose-600">Sem visão prévia, o recurso é buscar juros caros.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS ESSENCIAIS (TABELA E MÓDULOS) -->
+  <section id="recursos" class="py-20 md:py-24 bg-white relative">
+    <div class="mx-auto max-w-6xl px-5 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-[.15em] text-slate-400">Recursos Essenciais</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">Finanças mais claras. Em um só lugar.</h2>
+        <p class="mt-3 text-slate-500 text-sm sm:text-base leading-relaxed">Os 9 recursos centrais para organizar, acompanhar e analisar a rotina financeira da sua empresa.</p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+        <!-- Grupo 01 -->
+        <div class="bg-[#fafafc] border border-slate-200/80 rounded-3xl p-6 sm:p-7 shadow-savium reveal" data-delay="0">
+          <div class="flex items-center justify-between mb-5">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">01 • Controle</span>
+              <h3 class="text-lg font-black text-slate-950 mt-0.5">Rotina financeira</h3>
+            </div>
+            <div class="w-8 h-8 rounded-xl bg-slate-950 text-white flex items-center justify-center text-xs font-bold">A</div>
+          </div>
+          <div class="space-y-3">
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Dashboard financeiro</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Visão geral dos principais indicadores e liquidez.</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Receitas e despesas</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Lançamentos organizados por contas e categorias.</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Contas a pagar e receber</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Acompanhe compromissos e datas de vencimentos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grupo 02 -->
+        <div class="bg-[#fafafc] border border-slate-200/80 rounded-3xl p-6 sm:p-7 shadow-savium reveal" data-delay="150">
+          <div class="flex items-center justify-between mb-5">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">02 • Análise</span>
+              <h3 class="text-lg font-black text-slate-950 mt-0.5">Visão gerencial</h3>
+            </div>
+            <div class="w-8 h-8 rounded-xl bg-slate-950 text-white flex items-center justify-center text-xs font-bold">B</div>
+          </div>
+          <div class="space-y-3">
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">DRE gerencial</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Acompanhe receita, custos, despesas e resultado contábil.</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Fluxo de caixa</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Visualize movimentações presentes e projeções futuras.</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Centros de custos</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Entenda exatamente onde os recursos são consumidos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grupo 03 -->
+        <div class="bg-[#fafafc] border border-slate-200/80 rounded-3xl p-6 sm:p-7 shadow-savium reveal" data-delay="300">
+          <div class="flex items-center justify-between mb-5">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">03 • Operação</span>
+              <h3 class="text-lg font-black text-slate-950 mt-0.5">Praticidade no dia a dia</h3>
+            </div>
+            <div class="w-8 h-8 rounded-xl bg-slate-950 text-white flex items-center justify-center text-xs font-bold">C</div>
+          </div>
+          <div class="space-y-3">
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Importação OFX/CSV</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Importe movimentações pelo extrato emitido pelo banco.</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Armazenamento local</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Banco de dados local SQLite rápido e seguro.</p>
+            </div>
+            <div class="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+              <b class="text-xs font-bold text-slate-900 block">Backup manual</b>
+              <p class="text-[11px] text-slate-500 mt-0.5">Mantenha cópias dos seus dados sempre que desejar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona" class="py-20 md:py-24 bg-white border-t border-slate-200/60">
+    <div class="mx-auto max-w-5xl px-5 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-14 reveal">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">Do pagamento ao primeiro relatório em 3 passos</h2>
+        <p class="mt-3 text-slate-500 text-sm sm:text-base">Sem implantação, sem consultoria e sem servidor para manter.</p>
+      </div>
+      <ol class="relative grid gap-6 md:grid-cols-3">
+        <div class="step-line hidden md:block absolute top-7 left-[17%] right-[17%] h-0.5 rounded-full" aria-hidden="true"></div>
+        <li class="relative text-center reveal" data-delay="0"><div class="relative mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-white font-display font-extrabold text-lg shadow-savium">1</div><h3 class="mt-4 font-bold text-slate-950">Adquira pela Kiwify</h3><p class="mt-1.5 text-xs sm:text-sm text-slate-500 max-w-[16rem] mx-auto">Pagamento único e seguro. A garantia de 7 dias já vale desde a compra.</p></li>
+        <li class="relative text-center reveal" data-delay="120"><div class="relative mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-emerald-600 text-white font-display font-extrabold text-lg shadow-savium">2</div><h3 class="mt-4 font-bold text-slate-950">Instale no Windows</h3><p class="mt-1.5 text-xs sm:text-sm text-slate-500 max-w-[16rem] mx-auto">Baixe pela área de membros e abra. Seus dados ficam no seu computador.</p></li>
+        <li class="relative text-center reveal" data-delay="240"><div class="relative mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-emerald-500 text-white font-display font-extrabold text-lg shadow-savium">3</div><h3 class="mt-4 font-bold text-slate-950">Importe o extrato e veja o resultado</h3><p class="mt-1.5 text-xs sm:text-sm text-slate-500 max-w-[16rem] mx-auto">Traga o OFX ou CSV do banco, categorize e acompanhe a DRE e o fluxo de caixa.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PARA QUALQUER NEGÓCIO -->
+  <section id="negocios" class="py-20 md:py-24 bg-[#fafafc] border-t border-slate-200/60">
+    <div class="mx-auto max-w-5xl px-5 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-10 reveal">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">Um sistema, qualquer tipo de negócio</h2>
+        <p class="mt-3 text-slate-500 text-sm sm:text-base">Escolha o seu segmento e veja o que o PROSPER passa a mostrar.</p>
+      </div>
+      <div role="tablist" aria-label="Segmentos" id="biz-tabs" class="flex flex-wrap justify-center gap-2 reveal"></div>
+      <div id="biz-panel" class="biz-panel mt-8 grid gap-6 md:grid-cols-5 rounded-3xl bg-white border border-slate-200/80 p-6 sm:p-9 shadow-savium" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- COMPARAÇÃO: OUTRAS SOLUÇÕES VS PROSPER -->
+  <section id="diferenciais" class="py-20 md:py-24 bg-[#fafafc] border-t border-slate-200/60">
+    <div class="mx-auto max-w-5xl px-5 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-14 reveal">
+        <span class="text-xs font-bold uppercase tracking-[.15em] text-slate-400">Uma Proposta Direta</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">Menos complexidade. Mais clareza para a rotina.</h2>
+        <p class="mt-3 text-slate-500 text-sm sm:text-base leading-relaxed">Uma solução focada em acompanhamento financeiro, sem transformar sua empresa em um projeto longo de TI.</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-3xl border border-slate-200/80 bg-white p-7 shadow-savium reveal" data-delay="0">
+          <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Em muitas plataformas</div>
+          <h3 class="mt-2 text-lg font-bold text-slate-900">Modelos com muitas camadas</h3>
+          <ul class="mt-6 space-y-3.5 text-xs sm:text-sm text-slate-500">
+            <li class="flex items-center gap-3"><span class="text-slate-300 font-bold">—</span><span>Mensalidades caras recorrentes (R$ 90 a R$ 250/mês)</span></li>
+            <li class="flex items-center gap-3"><span class="text-slate-300 font-bold">—</span><span>Dependência de plataforma online e risco de instabilidade</span></li>
+            <li class="flex items-center gap-3"><span class="text-slate-300 font-bold">—</span><span>Recursos bloqueados em planos superiores</span></li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-950 bg-slate-950 text-white p-7 shadow-savium reveal" data-delay="150">
+          <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Com o PROSPER</div>
+          <h3 class="mt-2 text-lg font-bold text-white">Uma proposta executiva definitiva</h3>
+          <ul class="mt-6 space-y-3.5 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-center gap-3"><span class="text-emerald-400 font-bold">✓</span><span>Pagamento único vitalício de R$ 197</span></li>
+            <li class="flex items-center gap-3"><span class="text-emerald-400 font-bold">✓</span><span>Software nativo para Windows 10 e 11</span></li>
+            <li class="flex items-center gap-3"><span class="text-emerald-400 font-bold">✓</span><span>Operação 100% local com SQLite seguro</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULADORA -->
+  <section id="calculadora" class="py-20 md:py-24 bg-white border-t border-slate-200/60">
+    <div class="mx-auto max-w-4xl px-5 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">Quanto você paga hoje para controlar o dinheiro?</h2>
+        <p class="mt-3 text-slate-500 text-sm sm:text-base">Mova os controles e compare com o pagamento único do PROSPER.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2 rounded-[32px] border border-slate-200/80 bg-[#fafafc] p-6 sm:p-10 shadow-savium reveal">
+        <div class="space-y-7">
+          <div><div class="flex items-baseline justify-between"><label for="calc-m" class="text-sm font-bold text-slate-900">Mensalidade do sistema atual</label><b id="calc-m-v" class="font-display text-lg tnum text-slate-950"></b></div><input id="calc-m" type="range" min="50" max="400" step="10" value="150"><div class="flex justify-between text-[11px] text-slate-400"><span>R$ 50</span><span>R$ 400</span></div></div>
+          <div><div class="flex items-baseline justify-between"><label for="calc-y" class="text-sm font-bold text-slate-900">Por quanto tempo</label><b id="calc-y-v" class="font-display text-lg text-slate-950"></b></div><input id="calc-y" type="range" min="1" max="5" step="1" value="3"><div class="flex justify-between text-[11px] text-slate-400"><span>1 ano</span><span>5 anos</span></div></div>
+          <p class="text-xs text-slate-500 leading-relaxed">Estimativa simples: mensalidade × 12 × anos, sem reajustes. O PROSPER é R$ 197, uma única vez.</p>
+        </div>
+        <div class="rounded-3xl bg-slate-950 text-white p-7 flex flex-col justify-between">
+          <div>
+            <p class="text-xs text-slate-400 font-semibold">Mensalidades no período</p>
+            <p id="calc-tot" class="font-display text-3xl font-extrabold tnum text-rose-300 mt-1"></p>
+            <div class="mt-4 h-2 rounded-full bg-slate-800 overflow-hidden"><div id="calc-bar" class="h-full rounded-full bg-emerald-400 transition-all duration-500" style="width:6%"></div></div>
+            <p class="mt-1.5 text-[11px] text-slate-400">A barra verde é o PROSPER (R$ 197) em relação ao total.</p>
+            <p class="text-xs text-slate-400 font-semibold mt-6">Você economiza</p>
+            <p id="calc-eco" class="font-display text-5xl font-extrabold tnum text-emerald-400 mt-1"></p>
+            <p class="mt-2 text-xs text-slate-300">O PROSPER custa o equivalente a <b id="calc-meses" class="text-white"></b> mês de mensalidade.</p>
+          </div>
+          <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-7 flex items-center justify-center rounded-full bg-white text-slate-950 text-sm font-bold py-3.5 hover:bg-emerald-50 transition active:scale-95">Quero economizar com o PROSPER →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE DEPOIMENTOS (CARTÕES EM CAMADAS SAVIUM STYLE) -->
+  <section id="depoimentos" class="py-20 md:py-24 bg-white relative overflow-hidden border-t border-slate-200/60">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-semibold mb-3 reveal">
+        💬 Experiências Reais
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight reveal" data-delay="100">
+        O que dizem os empresários
+      </h2>
+
+      <div class="mt-14 relative max-w-md mx-auto reveal" data-delay="200">
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-savium text-center relative z-10">
+          <div class="w-12 h-12 rounded-full bg-slate-100 mx-auto flex items-center justify-center font-bold text-slate-700 text-base mb-4">
+            👨‍💼
+          </div>
+          <h4 class="font-bold text-slate-950 text-base">Roberto Silveira</h4>
+          <p class="text-[11px] text-slate-400">Diretor de Operações • Indústria &amp; Varejo</p>
+          <div class="my-3 text-amber-400 text-xs">★★★★★ <span class="text-slate-800 font-bold ml-1">5.0</span></div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+            “O Prosper me fez perceber que saldo bancário não é sinônimo de lucro. Em 10 minutos de conciliação diária eu organizo o fluxo dos nossos 3 centros de custo sem depender de planilhas pesadas.”
+          </p>
+        </div>
+        <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-3xl -rotate-3 scale-95 z-0"></div>
+        <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-3xl rotate-3 scale-90 -z-10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="py-16 bg-white border-t border-slate-200/60">
+    <div class="mx-auto max-w-3xl px-5 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center gap-6 rounded-3xl border border-emerald-200 bg-emerald-50/60 p-7 sm:p-9 reveal">
+        <div class="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-emerald-500 text-white shadow-lg" aria-hidden="true"><svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3zM9 12l2 2 4-4"/></svg></div>
+        <div class="text-center sm:text-left"><h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-950">Teste por 7 dias. Se não fizer sentido, você recupera o valor.</h2><p class="mt-2 text-sm text-slate-600 leading-relaxed">Instale, importe um extrato e veja sua DRE funcionando. A garantia segue as condições apresentadas no checkout da Kiwify.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA (CÁPSULA COM GRADIENTE SAVIUM E DETALHAMENTO DE PREÇO) -->
+  <section id="oferta" class="py-20 md:py-24 bg-[#fafafc] border-t border-slate-200/60">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6">
+      <div class="savium-banner-glow rounded-[36px] p-7 sm:p-12 text-center relative overflow-hidden shadow-savium border border-emerald-100/70 reveal">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold text-xl mx-auto mb-5 shadow-md">
+          P
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight max-w-xl mx-auto">
+          Seu dinheiro, sua escolha. Prosper.
+        </h2>
+        <p class="mt-4 text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+          Tenha em um só sistema os recursos essenciais para organizar a rotina financeira e enxergar a operação com clareza.
+        </p>
+
+        <div class="mt-8 max-w-xs mx-auto bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-slate-200/80 shadow-xs">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Licença para Windows</span>
+          <div class="flex items-baseline justify-center gap-1 mt-2">
+            <span class="text-xl font-black text-slate-900">R$</span>
+            <span class="text-5xl font-black tracking-tight text-slate-900">197</span>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-1">Pagamento único vitalício. Sem mensalidades.</p>
+          
+          <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-5 w-full flex items-center justify-center gap-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-3.5 transition active:scale-95 shadow-sm">
+            Quero o PROSPER por R$ 197 →
+          </a>
+          <p class="mt-3 text-[10px] text-slate-400">Compra segura via Kiwify • Garantia de 7 dias</p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold text-slate-600">
+          <span><b class="text-emerald-600">✓</b> DRE Gerencial</span>
+          <span><b class="text-emerald-600">✓</b> Fluxo de Caixa</span>
+          <span><b class="text-emerald-600">✓</b> Importação OFX</span>
+          <span><b class="text-emerald-600">✓</b> Banco SQLite Local</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ COM TODAS AS 6 PERGUNTAS E RESPOSTAS ORIGINAIS -->
+  <section id="faq" class="py-20 md:py-24 bg-white border-t border-slate-200/60">
+    <div class="max-w-2xl mx-auto px-5 sm:px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-bold uppercase tracking-[.15em] text-slate-400">Perguntas Frequentes</span>
+        <h2 class="mt-2 text-2xl sm:text-3xl font-black text-slate-950">Ainda ficou alguma dúvida?</h2>
+      </div>
+
+      <div class="space-y-3">
+        <details class="group bg-[#fafafc] border border-slate-200/80 rounded-2xl p-4 transition open:bg-white open:shadow-xs reveal" data-delay="0">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>O PROSPER tem mensalidade?</span>
+            <span class="text-slate-400 group-open:rotate-45 transition transform text-base leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-xs text-slate-500 leading-relaxed">Não. A oferta apresentada é de R$ 197 em pagamento único, sem nenhuma mensalidade do produto.</p>
+        </details>
+
+        <details class="group bg-[#fafafc] border border-slate-200/80 rounded-2xl p-4 transition open:bg-white open:shadow-xs reveal" data-delay="60">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Em quais computadores funciona?</span>
+            <span class="text-slate-400 group-open:rotate-45 transition transform text-base leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-xs text-slate-500 leading-relaxed">O PROSPER é destinado a computadores e notebooks com Windows 10 ou Windows 11.</p>
+        </details>
+
+        <details class="group bg-[#fafafc] border border-slate-200/80 rounded-2xl p-4 transition open:bg-white open:shadow-xs reveal" data-delay="120">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Meus dados ficam na nuvem?</span>
+            <span class="text-slate-400 group-open:rotate-45 transition transform text-base leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-xs text-slate-500 leading-relaxed">A aplicação trabalha localmente e utiliza SQLite para armazenamento dos dados no seu próprio computador.</p>
+        </details>
+
+        <details class="group bg-[#fafafc] border border-slate-200/80 rounded-2xl p-4 transition open:bg-white open:shadow-xs reveal" data-delay="180">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Posso importar extratos bancários?</span>
+            <span class="text-slate-400 group-open:rotate-45 transition transform text-base leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-xs text-slate-500 leading-relaxed">Sim. O sistema trabalha com arquivos OFX e CSV, conforme o formato disponibilizado pelo seu banco.</p>
+        </details>
+
+        <details class="group bg-[#fafafc] border border-slate-200/80 rounded-2xl p-4 transition open:bg-white open:shadow-xs reveal" data-delay="240">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Como recebo o sistema?</span>
+            <span class="text-slate-400 group-open:rotate-45 transition transform text-base leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-xs text-slate-500 leading-relaxed">Após a confirmação do pagamento, o acesso é disponibilizado pela área de membros da Kiwify, conforme as instruções da compra.</p>
+        </details>
+
+        <details class="group bg-[#fafafc] border border-slate-200/80 rounded-2xl p-4 transition open:bg-white open:shadow-xs reveal" data-delay="300">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Existe garantia?</span>
+            <span class="text-slate-400 group-open:rotate-45 transition transform text-base leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-xs text-slate-500 leading-relaxed">Sim. A oferta possui garantia incondicional de 7 dias, conforme as condições apresentadas no checkout.</p>
+        </details>
+
+        <details class="group bg-[#fafafc] border border-slate-200/80 rounded-2xl p-4 transition open:bg-white open:shadow-xs reveal" data-delay="360">
+          <summary class="flex justify-between items-center font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Como faço backup dos meus dados?</span>
+            <span class="text-slate-400 group-open:rotate-45 transition transform text-base leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-xs text-slate-500 leading-relaxed">O backup é manual: você gera uma cópia dos seus dados sempre que quiser e guarda onde preferir.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /gated -->
+</main>
+
+<!-- FOOTER COMPLETO COM DADOS CORPORATIVOS E MARCA D'ÁGUA SAVIUM -->
+<footer class="gate-hide bg-white border-t border-slate-200/70">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8 pt-14 pb-10">
+    <div class="grid gap-10 md:grid-cols-12">
+
+      <div class="md:col-span-5">
+        <a href="#conteudo" class="inline-flex items-center gap-3" aria-label="PROSPER — início">
+          <img src="favicon.png" alt="" width="36" height="36" class="h-9 w-9 object-contain" onerror="this.outerHTML='<span class=&quot;grid h-9 w-9 place-items-center rounded-lg bg-emerald-600 text-white font-display font-extrabold text-sm&quot;>P</span>'">
+          <span class="leading-none"><b class="block font-display text-base font-extrabold tracking-tight text-slate-900">PROSPER</b><span class="mt-1 block text-[11px] font-semibold text-slate-400">Gestão financeira para Windows</span></span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">DRE, fluxo de caixa e contas a pagar em um só lugar, com os dados no seu computador e pagamento único.</p>
+        <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-5 inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-emerald-700 active:scale-95">Quero o PROSPER por R$ 197</a>
+      </div>
+
+      <nav aria-label="Rodapé" class="md:col-span-3 md:col-start-7">
+        <h3 class="text-sm font-bold text-slate-900">Explore</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-slate-500">
+          <li><a href="#recursos" class="transition hover:text-emerald-700">Recursos</a></li>
+          <li><a href="#negocios" class="transition hover:text-emerald-700">Para quem é</a></li>
+          <li><a href="#calculadora" class="transition hover:text-emerald-700">Calculadora de economia</a></li>
+          <li><a href="#oferta" class="transition hover:text-emerald-700">Oferta</a></li>
+          <li><a href="#faq" class="transition hover:text-emerald-700">Dúvidas frequentes</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-3">
+        <h3 class="text-sm font-bold text-slate-900">Atendimento</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-slate-500">
+          <li><a href="https://api.whatsapp.com/send?phone=5591987545861" data-wa target="_blank" rel="noopener" class="transition hover:text-emerald-700">WhatsApp: (91) 98754-5861</a></li>
+          <li><a href="mailto:financas.feroli@gmail.com" class="break-all transition hover:text-emerald-700">financas.feroli@gmail.com</a></li>
+          <li>Belém, PA</li>
+          <li class="flex gap-4 pt-2"><a href="/privacidade" class="transition hover:text-emerald-700">Privacidade</a><a href="/termos" class="transition hover:text-emerald-700">Termos de uso</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-100 pt-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
+      <p>© 2026 PROSPER Soluções Empresariais. Todos os direitos reservados.</p>
+      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 font-semibold text-slate-500">
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Pagamento seguro via Kiwify</li>
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Garantia de 7 dias</li>
+        <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Windows 10 e 11</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- BARRA FIXA DE COMPRA MOBILE -->
+<div class="gate-hide mobile-cta fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/90 bg-white/95 backdrop-blur px-4 py-2.5 flex items-center justify-between md:hidden shadow-lg">
+  <div class="flex flex-col leading-tight">
+    <div class="flex items-baseline gap-1">
+      <span class="text-xs font-bold text-slate-700">R$</span>
+      <span class="text-lg font-black text-slate-900 font-sans">197</span>
+      <span class="text-[9px] font-bold text-emerald-600 uppercase tracking-wide">vitalício</span>
+    </div>
+  </div>
+  <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="rounded-full bg-emerald-600 px-5 py-2 text-xs font-bold text-white shadow-sm hover:bg-emerald-700 transition active:scale-95">
+    Adquirir Agora →
+  </a>
+</div>
+
+<!-- BANNER DE CONSENTIMENTO LGPD -->
+<div id="lgpd-banner" role="dialog" aria-labelledby="lgpd-title" aria-live="polite" class="fixed bottom-4 left-4 right-4 z-[70] hidden rounded-2xl border border-slate-200 bg-white p-4 text-xs text-slate-700 shadow-xl backdrop-blur-md sm:left-auto sm:right-6 sm:max-w-md">
+  <div class="flex items-start gap-3">
+    <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 font-bold" aria-hidden="true">✓</div>
+    <div class="min-w-0 flex-1">
+      <p id="lgpd-title" class="font-bold text-slate-900">Privacidade e métricas</p>
+      <p class="mt-1 text-[11px] text-slate-500 leading-relaxed">Usamos recursos essenciais para funcionamento e métricas de desempenho. Consulte <a href="/privacidade" class="text-slate-900 underline font-semibold">Privacidade</a>.</p>
+    </div>
+  </div>
+  <div class="mt-3 grid grid-cols-2 gap-2">
+    <button id="lgpd-reject" type="button" class="rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600 hover:bg-slate-50">Apenas essenciais</button>
+    <button id="lgpd-accept" type="button" class="rounded-xl bg-slate-950 px-3 py-2 text-xs font-bold text-white hover:bg-slate-800 shadow-sm">Aceitar tudo</button>
+  </div>
+</div>
+
+<!-- ===== VÍDEO (INJEÇÃO DINÂMICA NO CARROSSEL) ===== -->
+<script>
+(function(){
+  var c=window.PROSPER_VIDEO||{};
+  if(!(c.mp4||c.webm||c.embed))return;
+  var car=document.getElementById('product-carousel');if(!car)return;
+  var old=[].slice.call(car.querySelectorAll('.carousel-slide'));var box=old[0].parentNode;
+  old.forEach(function(s){s.classList.remove('opacity-100','scale-100','z-10');s.classList.add('opacity-0','scale-95','pointer-events-none','z-0')});
+  var s=document.createElement('div');s.className='carousel-slide absolute inset-0 transition-all duration-500 opacity-100 scale-100 z-10';
+  var idle='<img src="'+c.poster+'" alt="Vídeo de demonstração do PROSPER" class="w-full h-full object-cover"><button type="button" class="px-play" aria-label="Assistir à demonstração do PROSPER"><span>▶</span><em>Assistir à demonstração</em></button>';
+  function arm(){s.innerHTML=idle;window.__prosperVideoPlaying=false;s.querySelector('.px-play').addEventListener('click',function(){play(false)})}
+  function play(muted){
+    window.__prosperVideoPlaying=true;
+    s.innerHTML=c.embed?'<iframe src="'+c.embed+(c.embed.indexOf('?')>-1?'&':'?')+'autoplay=1'+(muted?'&mute=1':'')+'" class="w-full h-full" allow="autoplay; fullscreen" allowfullscreen title="Demonstração do PROSPER" style="border:0"></iframe>':'<video class="w-full h-full object-cover" controls autoplay '+(muted?'muted ':'')+'playsinline poster="'+c.poster+'">'+(c.webm?'<source src="'+c.webm+'" type="video/webm">':'')+(c.mp4?'<source src="'+c.mp4+'" type="video/mp4">':'')+'</video>';
+    var v=s.querySelector('video');if(v){v.addEventListener('ended',function(){window.__prosperVideoPlaying=false;document.dispatchEvent(new Event('prosper:videoended'))});if(muted){var sb=document.createElement('button');sb.type='button';sb.className='px-sound';sb.style.display='flex';sb.innerHTML='🔊 Ativar som';sb.onclick=function(){v.muted=false;v.currentTime=0;v.play();sb.remove()};s.appendChild(sb);v.addEventListener('volumechange',function(){if(!v.muted)sb.remove()})}v.addEventListener('pause',function(){window.__prosperVideoPlaying=false});v.addEventListener('play',function(){window.__prosperVideoPlaying=true})}
+    try{if(typeof gtag==='function')gtag('event','video_play',{video_title:'Demonstração PROSPER'})}catch(e){}
+  }
+  box.insertBefore(s,box.firstChild);arm();window.__prosperHold=document.body.classList.contains('gate-locked');if(c.autoplay&&window.__prosperHold)play(true);
+  var dots=document.getElementById('carouselDots'),d=document.createElement('button');d.type='button';d.className='carousel-dot h-1 w-6 bg-white rounded-full transition-all';dots.insertBefore(d,dots.firstChild);
+  [].slice.call(dots.children).forEach(function(x,i){x.setAttribute('data-target',i);x.setAttribute('aria-label','Ir para tela '+(i+1));if(i)x.className='carousel-dot h-1 w-2 bg-white/40 rounded-full transition-all'});
+  document.addEventListener('prosper:slide',function(e){if(e.detail!==0&&s.querySelector('video,iframe'))arm()});
+})();
+</script>
+
+<!-- SCRIPTS DE COMPORTAMENTO E INTERAÇÕES -->
+<script>
+// Menu Mobile
+(function() {
+  var btn = document.getElementById('mobile-menu-button');
+  var nav = document.getElementById('mobile-nav');
+  var iconOpen = document.getElementById('mobile-menu-open-icon');
+  var iconClose = document.getElementById('mobile-menu-close-icon');
+  if (!btn || !nav) return;
+
+  function closeMenu() {
+    nav.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Abrir menu');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }
+
+  btn.addEventListener('click', function() {
+    var isOpen = nav.classList.contains('is-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      nav.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Fechar menu');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+  });
+
+  nav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+
+// Tracking de compra Kiwify
+document.querySelectorAll('[data-buy]').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'PROSPER Gestão Financeira',value:197,currency:'BRL'});
+    if(typeof gtag==='function')gtag('event','begin_checkout',{value:197,currency:'BRL',items:[{item_name:'PROSPER Gestão Financeira',price:197,quantity:1}]});
+  });
+});
+
+// Consentimento LGPD
+(function(){
+  try{
+    var consent=localStorage.getItem('prosper_lgpd_consent');
+    var banner=document.getElementById('lgpd-banner');
+    if(consent==='accepted'){window.__loadProsperAnalytics();return;}
+    if(consent==='essential'){return;}
+    if(!banner)return;
+    setTimeout(function(){banner.classList.remove('hidden');},450);
+    document.getElementById('lgpd-accept').addEventListener('click',function(){localStorage.setItem('prosper_lgpd_consent','accepted');banner.classList.add('hidden');window.__loadProsperAnalytics();});
+    document.getElementById('lgpd-reject').addEventListener('click',function(){localStorage.setItem('prosper_lgpd_consent','essential');banner.classList.add('hidden');});
+  }catch(e){}
+})();
+
+// Carrossel de Telas com Touch e Swipe
+(function() {
+  var carousel = document.getElementById('product-carousel');
+  if (!carousel) return;
+
+  var slides = carousel.querySelectorAll('.carousel-slide');
+  var dots = carousel.querySelectorAll('.carousel-dot');
+  var prevBtn = document.getElementById('carouselPrev');
+  var nextBtn = document.getElementById('carouselNext');
+
+  var currentIndex = 0;
+  var totalSlides = slides.length;
+  var autoPlayTimer = null;
+  var autoPlayDelay = 4500;
+
+  function setSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+    document.dispatchEvent(new CustomEvent('prosper:slide',{detail:index}));
+
+    slides.forEach(function(slide, i) {
+      if (i === currentIndex) {
+        slide.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'z-0');
+        slide.classList.add('opacity-100', 'scale-100', 'z-10');
+      } else {
+        slide.classList.remove('opacity-100', 'scale-100', 'z-10');
+        slide.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'z-0');
+      }
+    });
+
+    dots.forEach(function(dot, i) {
+      if (i === currentIndex) {
+        dot.className = 'carousel-dot h-1 transition-all duration-300 w-6 bg-white rounded-full';
+      } else {
+        dot.className = 'carousel-dot h-1 transition-all duration-300 w-2 bg-white/40 hover:bg-white/70 rounded-full';
+      }
+    });
+  }
+
+  function nextSlide() { setSlide(currentIndex + 1); }
+  function prevSlide() { setSlide(currentIndex - 1); }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function(e) { e.preventDefault(); nextSlide(); resetAutoPlay(); });
+  }
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function(e) { e.preventDefault(); prevSlide(); resetAutoPlay(); });
+  }
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = parseInt(dot.getAttribute('data-target'), 10);
+      if (!isNaN(target)) { setSlide(target); resetAutoPlay(); }
+    });
+  });
+
+  function startAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(function(){ if(!window.__prosperVideoPlaying && !window.__prosperHold) nextSlide(); }, autoPlayDelay);
+  }
+  function stopAutoPlay() {
+    if (autoPlayTimer) { clearInterval(autoPlayTimer); autoPlayTimer = null; }
+  }
+  function resetAutoPlay() { stopAutoPlay(); startAutoPlay(); }
+
+  carousel.addEventListener('mouseenter', stopAutoPlay);
+  carousel.addEventListener('mouseleave', startAutoPlay);
+
+  var touchStartX = 0, touchEndX = 0, touchStartY = 0, touchEndY = 0;
+  carousel.addEventListener('touchstart', function(e) {
+    stopAutoPlay();
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    var diffX = touchStartX - touchEndX;
+    var diffY = touchStartY - touchEndY;
+    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) { nextSlide(); } else { prevSlide(); }
+    }
+    startAutoPlay();
+  }, { passive: true });
+
+  startAutoPlay();
+})();
+
+// FAQ Accordion exclusivo
+(function() {
+  var faqDetails = document.querySelectorAll('#faq details');
+  faqDetails.forEach(function(detail) {
+    detail.addEventListener('toggle', function() {
+      if (this.open) {
+        faqDetails.forEach(function(other) {
+          if (other !== detail && other.open) {
+            other.removeAttribute('open');
+          }
+        });
+      }
+    });
+  });
+})();
+
+// Scroll Progress e Animações Reveal
+(function() {
+  var progressBar = document.getElementById('scroll-progress');
+  function updateScrollProgress() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (progressBar && docHeight > 0) {
+      var progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateScrollProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+  updateScrollProgress();
+
+  var revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.getAttribute('data-delay');
+          if (delay) el.style.transitionDelay = delay + 'ms';
+          el.classList.add('is-revealed');
+          obs.unobserve(el);
+        }
+      });
+    }, { root: null, margin: '0px 0px -40px 0px', threshold: 0.1 });
+
+    revealElements.forEach(function(el) { observer.observe(el); });
+  } else {
+    revealElements.forEach(function(el) { el.classList.add('is-revealed'); });
+  }
+})();
+</script>
+<a href="https://api.whatsapp.com/send?phone=5591987545861&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20PROSPER" data-wa target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a2 2 0 012 2v10a2 2 0 01-2 2H9l-5 4v-4H4a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg><span class="hidden sm:inline">Tirar dúvidas</span></a>
+
+<div id="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-title">
+  <div class="relative w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl">
+    <button type="button" id="exit-close" aria-label="Fechar" class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full text-slate-400 hover:bg-slate-100 transition">✕</button>
+    <img src="favicon.png" alt="PROSPER" width="48" height="48" class="mx-auto mb-4 h-12 w-12 object-contain drop-shadow-sm">
+    <h2 id="exit-title" class="font-display text-2xl font-extrabold text-slate-950">Ficou alguma dúvida?</h2>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Você pode testar o PROSPER por 7 dias com garantia. Se preferir conversar antes, respondemos pelo WhatsApp.</p>
+    <a href="https://pay.kiwify.com.br/g1AjD9G" data-buy class="mt-6 flex items-center justify-center rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white hover:bg-emerald-700">Quero o PROSPER por R$ 197 →</a>
+    <a href="https://api.whatsapp.com/send?phone=5591987545861&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20PROSPER" data-wa target="_blank" rel="noopener" class="mt-3 flex items-center justify-center rounded-full border border-slate-200 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50">Falar no WhatsApp</a>
+  </div>
+</div>
+
+<script>
+/* ===== Modo "vídeo primeiro" =====
+   O restante da página abre quando o vídeo termina OU após UNLOCK_SECONDS, o que ocorrer primeiro. */
+(function(){
+  var UNLOCK_SECONDS=60;
+  var b=document.body;
+  var bar=document.getElementById('gate-fil'),t=document.getElementById('gate-t');
+  var next=document.getElementById('gate-next'),done=false;
+  function fmt(n){n=Math.max(0,Math.ceil(n));return Math.floor(n/60)+':'+('0'+n%60).slice(-2)}
+  function unlock(reason){
+    if(done)return;done=true;if(typeof tick!=='undefined'&&tick)clearInterval(tick);
+    try{sessionStorage.setItem('px_unlocked','1')}catch(e){}
+    window.__prosperHold=false;
+    b.classList.remove('gate-locked');b.classList.add('gate-open','gate-unlocking');
+    try{if(typeof gtag==='function')gtag('event','conteudo_liberado',{motivo:reason});if(typeof fbq==='function')fbq('trackCustom','ConteudoLiberado',{motivo:reason})}catch(e){}
+  }
+  if(!b.classList.contains('gate-locked')){
+    b.classList.add('gate-open');
+    var gb=document.getElementById('gate-bar');
+    if(gb)gb.style.display='none';
+    return;
+  }
+  var t0=Date.now(),tick=setInterval(function(){
+    var el=(Date.now()-t0)/1000;
+    if(bar)bar.style.width=Math.min(100,el/UNLOCK_SECONDS*100)+'%';
+    if(t)t.textContent=fmt(UNLOCK_SECONDS-el);
+    if(el>=UNLOCK_SECONDS)unlock('tempo');
+  },250);
+  document.addEventListener('prosper:videoended',function(){unlock('video')});
+  if(next)next.addEventListener('click',function(){var el=document.getElementById('como-funciona');if(el)el.scrollIntoView({behavior:'smooth'})});
+  /* links internos antes da liberação não existem; se alguém chegar com #hash, abre direto */
+  if(location.hash&&location.hash.length>1)unlock('link');
+})();
+</script>
+
+<script>
+(function(){
+  var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return[].slice.call((c||document).querySelectorAll(s))};
+  var ev=function(n,p){try{if(typeof gtag==='function')gtag('event',n,p||{});if(typeof fbq==='function')fbq('trackCustom',n,p||{})}catch(e){}};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var brl=function(n,d){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:d||0,maximumFractionDigits:d||0})};
+
+  // contadores animados nos widgets do hero
+  var fm={x:function(v){return v.toFixed(2).replace('.',',')+'x'},brl2:function(v){return brl(v,2)}};
+  function count(el){var to=+el.dataset.count,f=fm[el.dataset.fmt];if(reduce){el.textContent=f(to);return}var t0=performance.now();(function t(n){var p=Math.min(1,(n-t0)/1600);el.textContent=f(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(t)})(t0)}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){count(e.target);io.unobserve(e.target)}})},{threshold:.4});$$('[data-count]').forEach(function(e){io.observe(e)})}
+
+  // calculadora
+  var m=$('#calc-m'),y=$('#calc-y'),used=false;
+  function calc(){var mv=+m.value,yv=+y.value,tot=mv*12*yv;
+    $('#calc-m-v').textContent=brl(mv)+'/mês';$('#calc-y-v').textContent=yv+(yv>1?' anos':' ano');
+    $('#calc-tot').textContent=brl(tot);$('#calc-eco').textContent=brl(Math.max(0,tot-197));
+    $('#calc-meses').textContent=(197/mv).toFixed(1).replace('.',',');$('#calc-bar').style.width=Math.max(3,197/tot*100)+'%';
+    if(!used){used=true;ev('calculadora_usada')}}
+  if(m&&y){m.addEventListener('input',calc);y.addEventListener('input',calc);calc();used=false}
+
+  // segmentos
+  var B=[
+   ['Varejo','Loja de bairro, e-commerce, moda','Saiba qual categoria de produto realmente sobra dinheiro.',['Centro de custo por loja ou canal de venda','Contas a pagar de fornecedores sempre à vista','Previsto vs realizado para planejar a reposição']],
+   ['Serviços','Agências, consultorias, escritórios','Descubra quanto cada cliente deixa de lucro depois dos custos.',['Receitas recorrentes separadas das avulsas','Custo fixo mensal visível na DRE','Fluxo de caixa projetado para as próximas semanas']],
+   ['Indústria','Fábricas, oficinas, produção','Enxergue o custo real por linha de produção.',['Centros de custo por setor ou máquina','Compras de insumo com vencimentos organizados','Resultado por competência e por caixa']],
+   ['Saúde','Clínicas, consultórios, laboratórios','Separe o que é repasse do que é resultado da clínica.',['Receitas por profissional ou procedimento','Despesas fixas (aluguel, equipe) sob controle','Conciliação do extrato com os recebimentos']],
+   ['Alimentação','Restaurantes, padarias, delivery','Controle o CMV e as taxas que corroem a margem.',['Categorias para insumos, taxas e embalagens','Contas a pagar da semana em um só lugar','Dashboard com liquidez do dia']],
+   ['Imóveis','Imobiliárias, administradoras, locação','Acompanhe aluguéis e custos por imóvel ou carteira.',['Centro de custo por imóvel','Recebimentos e vencimentos organizados','DRE por período para decisões de investimento']],
+   ['Tecnologia','Software, startups, suporte','Entenda quanto custa manter a operação rodando.',['Despesas de ferramentas e equipe categorizadas','Receita recorrente acompanhada mês a mês','Projeção de caixa para planejar contratações']]];
+  var tabs=$('#biz-tabs'),panel=$('#biz-panel');
+  function biz(i,track){$$('.biz-tab').forEach(function(b,k){b.setAttribute('aria-selected',k===i)});var d=B[i];
+    panel.innerHTML='<div class="md:col-span-3"><p class="text-xs font-bold text-emerald-600">'+d[1]+'</p><h3 class="mt-1 text-2xl font-black text-slate-950 tracking-tight">'+d[2]+'</h3><a href="#oferta" class="mt-6 inline-flex rounded-full bg-slate-950 px-6 py-3 text-xs font-bold text-white hover:bg-slate-800">Quero isso no meu negócio →</a></div><ul class="md:col-span-2 space-y-3">'+d[3].map(function(t){return'<li class="flex gap-3 rounded-2xl border border-slate-100 bg-[#fafafc] p-3.5 text-xs sm:text-sm text-slate-700"><span class="font-bold text-emerald-500">✓</span><span>'+t+'</span></li>'}).join('')+'</ul>';
+    if(track)ev('segmento_visto',{segmento:d[0]})}
+  if(tabs){B.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.className='biz-tab';b.setAttribute('role','tab');b.textContent=d[0];b.addEventListener('click',function(){biz(i,true)});tabs.appendChild(b)});biz(0)}
+
+  // saída da página (desktop, 1x por sessão)
+  var modal=$('#exit-modal');function closeM(){modal.classList.remove('is-open')}
+  document.addEventListener('mouseout',function(e){try{if(!e.relatedTarget&&e.clientY<=0&&window.scrollY>700&&!sessionStorage.getItem('px_exit')){sessionStorage.setItem('px_exit','1');modal.classList.add('is-open');$('#exit-close').focus();ev('exit_intent')}}catch(x){}});
+  $('#exit-close').addEventListener('click',closeM);modal.addEventListener('click',function(e){if(e.target===modal)closeM()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM()});
+
+  // cliques no WhatsApp + profundidade de rolagem + seção ativa
+  $$('[data-wa]').forEach(function(a){a.addEventListener('click',function(){ev('whatsapp_click')})});
+  var marks={25:0,50:0,75:0,100:0};
+  window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;if(h<=0)return;var p=scrollY/h*100;Object.keys(marks).forEach(function(k){if(!marks[k]&&p>=k){marks[k]=1;ev('scroll_'+k)}})},{passive:true});
+  if('IntersectionObserver' in window){var links=$$('header nav a[href^="#"]');var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(l){l.classList.toggle('is-active',l.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});['problema','recursos','negocios','diferenciais','calculadora','oferta','faq'].forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)})}
+})();
+</script>
+<script>
+/* ===== Rolagem suave com o mouse (desktop) =====
+   Aplica inércia à roda do mouse. Não atua em telas de toque nem com "reduzir movimento" ativo. */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||matchMedia('(pointer: coarse)').matches)return;
+  var root=document.documentElement,EASE=0.11;
+  root.classList.add('px-smooth');
+  var target=window.scrollY,cur=target,raf=null,last=0;
+  function max(){return Math.max(0,root.scrollHeight-innerHeight)}
+  function clamp(v){return Math.max(0,Math.min(max(),v))}
+  function step(now){
+    var dt=Math.min(64,now-(last||now));last=now;
+    var d=target-cur;
+    if(Math.abs(d)<0.5){cur=target;window.scrollTo(0,cur);raf=null;last=0;return}
+    cur+=d*(1-Math.pow(1-EASE,dt/16.667));
+    window.scrollTo(0,cur);
+    raf=requestAnimationFrame(step);
+  }
+  function go(){if(!raf){last=0;raf=requestAnimationFrame(step)}}
+  function inScrollable(el){
+    while(el&&el!==document.body&&el!==root){
+      var o=getComputedStyle(el).overflowY;
+      if((o==='auto'||o==='scroll')&&el.scrollHeight>el.clientHeight+1)return true;
+      el=el.parentElement;
+    }
+    return false;
+  }
+  addEventListener('wheel',function(e){
+    if(e.ctrlKey||e.defaultPrevented||Math.abs(e.deltaX)>Math.abs(e.deltaY))return;
+    var m=document.getElementById('exit-modal');if(m&&m.classList.contains('is-open'))return;
+    if(inScrollable(e.target))return;
+    if(max()<=0)return;
+    e.preventDefault();
+    var dy=e.deltaMode===1?e.deltaY*34:e.deltaMode===2?e.deltaY*innerHeight:e.deltaY;
+    if(!raf){cur=target=window.scrollY}
+    target=clamp(target+dy);go();
+  },{passive:false});
+  /* barra de rolagem, teclado e outros métodos: sincroniza quando a animação não está ativa */
+  addEventListener('scroll',function(){if(!raf){cur=target=window.scrollY}},{passive:true});
+  addEventListener('resize',function(){target=clamp(target);cur=clamp(cur)});
+  /* links internos (#secao) passam pelo mesmo motor suave */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;
+    var id=a.getAttribute('href').slice(1);if(!id)return;
+    var el=document.getElementById(id);if(!el)return;
+    e.preventDefault();
+    if(!raf){cur=target=window.scrollY}
+    target=clamp(el.getBoundingClientRect().top+window.scrollY-72);go();
+    try{history.replaceState(null,'','#'+id)}catch(x){}
+  });
+})();
+</script>
+</body>
+</html>

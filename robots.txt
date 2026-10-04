@@ -4,5 +4,7 @@ Disallow: /Obrigado/
 Disallow: /obrigado/
 Disallow: /download
 Disallow: /download.html
+Disallow: /index3
+Disallow: /index3.html
 
 Sitemap: https://prospergestao.com.br/sitemap.xml
